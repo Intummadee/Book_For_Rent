@@ -44,6 +44,10 @@ https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerD
                     <img src="https://skillicons.dev/icons?i=bootstrap" width="48" height="48" alt="bootstrap" />
                 <br>Bootstrap
                 </td>
+                <td align="center"  width="96">
+                    <img src="https://skillicons.dev/icons?i=php" width="48" height="48" alt="bootstrap" />
+                <br>PHP
+                </td>
             </tr>
         </table>
 </details>
