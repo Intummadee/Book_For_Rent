@@ -185,7 +185,7 @@ show tables;
 
 !! คำสั่ง **ลบตาราง**
 ``` SQL
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS _<tableName>_;
 ```
 
 - **คำสั่งออก** จากโหมดแก้ไขฐานข้อมูล 🧀 
