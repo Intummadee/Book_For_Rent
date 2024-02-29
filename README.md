@@ -175,7 +175,6 @@ INSERT INTO BOOKS (title, category, price, author, cover_image_path, description
 ``` SQL
 SELECT * FROM BOOKS;
 USE php;
-DROP TABLE IF EXISTS users;
 ``` 
 
 - คำสั่ง **แสดงตารางทั้งหมดที่มี** ในฐานข้อมูลที่ชื่อ php
@@ -184,6 +183,10 @@ USE php;
 show tables;
 ```
 
+!! คำสั่ง **ลบตาราง**
+``` SQL
+DROP TABLE IF EXISTS users;
+```
 
 - **คำสั่งออก** จากโหมดแก้ไขฐานข้อมูล 🧀 
 ```exit;```
