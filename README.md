@@ -183,7 +183,7 @@ USE php;
 show tables;
 ```
 
-!! คำสั่ง **ลบตาราง**
+- ⚠️⚠️ คำสั่ง **ลบตาราง**
 ``` SQL
 DROP TABLE IF EXISTS _<tableName>_;
 ```
