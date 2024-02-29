@@ -1,8 +1,6 @@
 
 <h1 align="center">Book_for_rent<img src="https://media.tenor.com/Oc6hUz9-D4IAAAAj/ginger-cat-cat.gif" width="70px"></h1>
 
-<br>
-
 ### Tutorial
 ```
 https://www.youtube.com/watch?v=Ev3--3aX2X0
