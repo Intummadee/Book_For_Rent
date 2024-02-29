@@ -1,25 +1,25 @@
 
-<h1 align="center">Book_for_rent  .𖥔 ݁ 🪐˖ <img src="https://media.tenor.com/2Q3b80oIodoAAAAi/cat-yarn.gif " width="70px"></h1>
+<h1 align="center">Book_for_rent<img src="https://media.tenor.com/Oc6hUz9-D4IAAAAj/ginger-cat-cat.gif" width="70px"></h1>
 
+<br>
 
-
-Tutorial
+### Tutorial
 ```
 https://www.youtube.com/watch?v=Ev3--3aX2X0
 ```
 
-Aws Tutorial 
+### Aws Tutorial Document 
 ```
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html
 ```
 
-ตัวอย่าง เว็บไซต์ที่นำขึ้น Cloud
+### ตัวอย่าง เว็บไซต์ที่นำขึ้น Cloud  .𖥔 ݁ 🪐˖
 <img width="100%" height="60%" src="https://github.com/Intummadee/Book_For_Rent/blob/main/assets/index.png?raw=true" >
 
 
 <details>
     <summary>
-    🌱 Use To Code:
+    <b>🌱 Use To Code:</b>
     </summary>
     <br>
         <table align="center">
@@ -43,6 +43,10 @@ https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerD
                 <td align="center"  width="96">
                     <img src="https://skillicons.dev/icons?i=bootstrap" width="48" height="48" alt="bootstrap" />
                 <br>Bootstrap
+                </td>
+                <td align="center"  width="96">
+                    <img src="https://skillicons.dev/icons?i=php" width="48" height="48" alt="bootstrap" />
+                <br>PHP
                 </td>
             </tr>
         </table>
@@ -94,7 +98,7 @@ define('DB_DATABASE', 'php');
 
 cat db.inc.php (เช็กว่าถูกไหม)
 
-## เข้า dB ด้วยคำสั่ง
+## วิธีเข้าพื้นที่จัดการ dB 
 ```mysql -u admin -h <php endpoint> -p```
 
 
@@ -103,6 +107,7 @@ cat db.inc.php (เช็กว่าถูกไหม)
 show databases;
 ``` 
 
+```
 +--------------------+
 | Database           |
 +--------------------+
@@ -112,6 +117,7 @@ show databases;
 | php                |
 | sys                |
 +--------------------+
+```
 
 เราต้องเข้าใน ฐานข้อมูล php ก่อน คำสั่งเข้าฐานข้อมูล = ```use php```
 
@@ -183,7 +189,7 @@ show tables;
 ```
 
 
-- คำสั่งออกจากโหมดแก้ไขฐานข้อมูล
+- คำสั่งออกจากโหมดแก้ไขฐานข้อมูล 🧀 
 ```exit;```
 
 
@@ -191,4 +197,5 @@ show tables;
 
 ## อ้างอิง
 &emsp; https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/
+
 &emsp; https://www.w3schools.com/php/
