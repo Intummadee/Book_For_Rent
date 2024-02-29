@@ -1,10 +1,58 @@
-# Book_for_rent .𖥔 ݁ 🪐˖
- 
+
+<h1 align="center">Book_for_rent  .𖥔 ݁ 🪐˖ <img src="https://media.tenor.com/2Q3b80oIodoAAAAi/cat-yarn.gif " width="70px"></h1>
+
+
+
 Tutorial
-```https://www.youtube.com/watch?v=Ev3--3aX2X0```
+```
+https://www.youtube.com/watch?v=Ev3--3aX2X0
+```
 
 Aws Tutorial 
-```https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html```
+```
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html
+```
+
+ตัวอย่าง เว็บไซต์ที่นำขึ้น Cloud
+<img width="100%" height="60%" src="https://github.com/Intummadee/Book_For_Rent/blob/main/assets/index.png?raw=true" >
+
+
+<details>
+    <summary>
+    🌱 Use To Code:
+    </summary>
+    <br>
+        <table align="center">
+            <tr>
+                <td align="center" width="96">
+                    <img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="icon" width="65" height="65" />
+                <br>MySQL
+                </td>
+                <td align="center" width="96">
+                    <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="icon" width="65" height="65" />
+                <br>Github
+                </td>
+                <td align="center"  width="96">
+                    <img src="https://skillicons.dev/icons?i=html" width="48" height="48" alt="HTML5" />
+                <br>HTML5
+                </td>
+                <td align="center" width="96">
+                    <img src="https://skillicons.dev/icons?i=css" width="48" height="48" alt="css" />
+                <br>CSS
+                </td>
+                <td align="center"  width="96">
+                    <img src="https://skillicons.dev/icons?i=bootstrap" width="48" height="48" alt="bootstrap" />
+                <br>Bootstrap
+                </td>
+            </tr>
+        </table>
+</details>
+
+
+<p align="left">
+  <a href="https://github.com/Intummadee?tab=repositories" target="_blank"><img alt="All Repositories" title="All Repositories" src="https://img.shields.io/badge/-All%20Repos-2962FF?style=for-the-badge&logo=koding&logoColor=white"/></a>
+</p>
+
 
 
 Example: Connect to instance 
@@ -13,7 +61,7 @@ Example: Connect to instance
 
 ---
 
-# วิธีเข้าแก้ไฟล์ใน AWS ☃︎
+## วิธีเข้าแก้ไฟล์ใน AWS ☃︎
 
 ```sudo -i``` เพื่อเข้าสู่ root
 
@@ -27,7 +75,7 @@ Example: Connect to instance
 
 ---
 
-# วิธีเข้าสู่ฐานข้อมูล 🍹
+## วิธีเข้าสู่ฐานข้อมูล 🍹
 
 ดูใน RDS
 หา php endpoint เช่น ```php-database.c16ycg4m0nwv.us-east-1.rds.amazonaws.com```
@@ -114,14 +162,14 @@ CREATE TABLE USERS (
 DESCRIBE BOOKS;
 ```
 
--คำสั่ง **เพิ่มข้อมูล** ลงในตาราง BOOKS
+- คำสั่ง **เพิ่มข้อมูล** ลงในตาราง BOOKS
 ``` SQL
 INSERT INTO BOOKS (title, category, price, author, cover_image_path, description) VALUES 
 ('The girl and the Witchs Garden', 'Fantasy', 200.00, 'Erin BowMan', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570732371i/44779631.jpg', 'The owner of the estate and Piper’s wealthy grandmother—is a witch. The grand house and its garden hold many secrets—some of which may even save her father—and Piper will need to believe in herself.'),
 ('The CERULEAN', 'Fantasy', 250.00, 'Amy Ewing', 'https://devouringbooks2017.files.wordpress.com/2018/12/The-Cerulean-by-Amy-Ewing.jpg', 'Sera has always felt as if she didn’t belong among her people, the Cerulean. She is curious about everything and can’t stop questioning her three mothers, her best friend, Leela, and even the High Priestess');
 ```
 
--คำสั่ง **อ่าน** ตาราง BOOKS
+- คำสั่ง **อ่าน** ตาราง BOOKS
 ``` SQL
 SELECT * FROM BOOKS;
 USE php;
@@ -140,3 +188,7 @@ show tables;
 
 
 
+
+## อ้างอิง
+&emsp; https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/
+&emsp; https://www.w3schools.com/php/
