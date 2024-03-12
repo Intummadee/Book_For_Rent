@@ -1,0 +1,142 @@
+body {
+background: #F4F3F3;
+margin: 0;
+}
+
+#side_nav {
+background: #ffffff;
+width: 250px;
+position: fixed;
+top: 0;
+bottom: 0;
+z-index: 1;
+overflow-y: auto;
+transition: all 0.3s;
+}
+
+.content {
+margin-left: 250px;
+padding: 20px;
+}
+
+hr.h-color {
+background: #eee;
+}
+
+.sidebar li.active {
+background: #eee;
+border-radius: 8px;
+}
+
+.sidebar li.active a,
+.sidebar li.active a:hover {
+color: #000;
+}
+
+.sidebar li a {
+color: #000000;
+}
+
+@media (max-width: 767px) {
+#side_nav {
+margin-left: -250px;
+position: fixed;
+}
+
+#side_nav.active {
+margin-left: 0;
+}
+}
+
+.card img {
+width: 30%;
+
+border-radius: 5px 0px 0px 5px;
+}
+
+.card {
+flex-direction: row;
+
+position: relative;
+
+
+}
+.form {
+width: 100%;
+background-color: red;
+}
+
+.inp {
+
+bottom: 10px;     
+right: 10px;       
+background-color: #8CC93E;
+border: none;
+} 
+
+
+
+.container {
+max-width: 600px;
+margin: 50px auto;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+h1 {
+text-align: center;
+padding-top: 10px;
+}
+
+label {
+display: block;
+margin: 10px 0 5px;
+}
+
+input {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+button {
+display: block;
+margin: 0 auto;
+background-color: #4caf50;
+color: #fff;
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+
+button:hover {
+background-color: #45a049;
+}
+
+.whole_sidebar {
+display: flex;
+justify-content: space-between;
+}
+
+.addressDetail {   
+position: fixed;
+width: 500px;
+height: 100%;
+top: 0;
+bottom: 0;
+right: 0;
+z-index: 11;
+overflow-y: auto;
+margin-right: 0px;
+margin-left: auto;
+padding: 25px;
+justify-self: center;
+}

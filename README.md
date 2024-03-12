@@ -120,6 +120,27 @@ show databases;
 +--------------------+
 ```
 
+```
+mysql> SELECT * FROM orders;
++----------+---------+---------+----------+-------------+---------------------+
+| order_id | user_id | book_id | quantity | total_price | order_date          |
++----------+---------+---------+----------+-------------+---------------------+
+|        5 |       1 |       2 |        3 |       45.67 | 2024-03-12 22:33:11 |
++----------+---------+---------+----------+-------------+---------------------+
+```
+
+```
+mysql> SELECT * FROM USERS;
++---------+----------+----------+-----------------+
+| user_id | username | password | email           |
++---------+----------+----------+-----------------+
+|       1 | girl     | 1111     | Judas@gmail.com |
+|       2 | boy      | 1111     | Cat@gmail.com   |
++---------+----------+----------+-----------------+
+```
+
+
+
 เราต้องเข้าใน ฐานข้อมูล php ก่อน คำสั่งเข้าฐานข้อมูล = ```use php```
 
 - คำสั่ง **สร้าง Table** ชื่อ BOOKS
@@ -170,10 +191,16 @@ DESCRIBE BOOKS;
 ```
 
 - คำสั่ง **เพิ่มข้อมูล** ลงในตาราง BOOKS
-``` SQL
+```SQL
 INSERT INTO BOOKS (title, category, price, author, cover_image_path, description) VALUES 
 ('The girl and the Witchs Garden', 'Fantasy', 200.00, 'Erin BowMan', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570732371i/44779631.jpg', 'The owner of the estate and Piper’s wealthy grandmother—is a witch. The grand house and its garden hold many secrets—some of which may even save her father—and Piper will need to believe in herself.'),
 ('The CERULEAN', 'Fantasy', 250.00, 'Amy Ewing', 'https://devouringbooks2017.files.wordpress.com/2018/12/The-Cerulean-by-Amy-Ewing.jpg', 'Sera has always felt as if she didn’t belong among her people, the Cerulean. She is curious about everything and can’t stop questioning her three mothers, her best friend, Leela, and even the High Priestess');
+```
+
+```SQL
+INSERT INTO USERS (user_id, username, password, email) VALUES 
+(1, 'girl', '1111',  'Judas@gmail.com'),
+(2, 'boy', '1111',  'Cat@gmail.com');
 ```
 
 - คำสั่ง **อ่าน** ตาราง BOOKS
@@ -187,6 +214,10 @@ USE php;
 USE php;
 show tables;
 ```
+
+- คำสั่ง **Update**
+UPDATE USERS SET email = 'Cat@gmail.com' WHERE user_id = 2;
+
 
 - ⚠️⚠️ คำสั่ง **ลบตาราง**
 ``` SQL
