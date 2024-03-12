@@ -63,6 +63,11 @@ Example: Connect to instance
 
 ---
 
+## Cloud Class 
+https://www.awsacademy.com/vforcesite/LMS_Login
+
+---
+
 ## วิธีเข้าแก้ไฟล์ใน AWS ☃︎
 
 ```sudo -i``` เพื่อเข้าสู่ root
