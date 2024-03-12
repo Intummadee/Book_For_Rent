@@ -14,10 +14,13 @@ https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerD
 ### ตัวอย่าง เว็บไซต์ที่นำขึ้น Cloud  .𖥔 ݁ 🪐˖
 <img width="100%" height="60%" src="https://github.com/Intummadee/Book_For_Rent/blob/main/assets/index.png?raw=true" >
 
+### Start!
+Example: Connect to instance 
+```ssh -i "php-website.pem" ubuntu@ec2-3-235-87-10.compute-1.amazonaws.com```
 
+### Built With 🕶
 <details>
     <summary>
-    <b>🌱 Use To Code:</b>
     </summary>
     <br>
         <table align="center">
@@ -46,20 +49,15 @@ https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerD
                     <img src="https://skillicons.dev/icons?i=php" width="48" height="48" alt="bootstrap" />
                 <br>PHP
                 </td>
+                <td align="center"  width="96">
+                    <img src="https://skillicons.dev/icons?i=aws" width="48" height="48" alt="bootstrap" />
+                <br>AWS
+                </td>
             </tr>
         </table>
 </details>
 
-
-<p align="left">
-  <a href="https://github.com/Intummadee?tab=repositories" target="_blank"><img alt="All Repositories" title="All Repositories" src="https://img.shields.io/badge/-All%20Repos-2962FF?style=for-the-badge&logo=koding&logoColor=white"/></a>
-</p>
-
-
-
-Example: Connect to instance 
-```ssh -i "php-website.pem" ubuntu@ec2-3-235-87-10.compute-1.amazonaws.com```
-
+<br>
 
 ---
 
@@ -166,7 +164,7 @@ CREATE TABLE USERS (
 
 
 
--- อยาก **ดูรายละเอียด** ของตารางชื่อ BOOKS
+- คำสั่ง **ดูรายละเอียด** ของตารางชื่อ BOOKS
 ``` SQL
 DESCRIBE BOOKS;
 ```
@@ -182,7 +180,6 @@ INSERT INTO BOOKS (title, category, price, author, cover_image_path, description
 ``` SQL
 SELECT * FROM BOOKS;
 USE php;
-DROP TABLE IF EXISTS users;
 ``` 
 
 - คำสั่ง **แสดงตารางทั้งหมดที่มี** ในฐานข้อมูลที่ชื่อ php
@@ -191,8 +188,12 @@ USE php;
 show tables;
 ```
 
+- ⚠️⚠️ คำสั่ง **ลบตาราง**
+``` SQL
+DROP TABLE IF EXISTS _<tableName>_;
+```
 
-- คำสั่งออกจากโหมดแก้ไขฐานข้อมูล 🧀 
+- **คำสั่งออก** จากโหมดแก้ไขฐานข้อมูล 🧀 
 ```exit;```
 
 
@@ -202,3 +203,12 @@ show tables;
 &emsp; https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/
 
 &emsp; https://www.w3schools.com/php/
+
+
+<br>
+<div> 
+ <a href="https://www.linkedin.com/in/intummadee-maliyam-800856226/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+ <a href = "mailto:intummadee@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://github.com/Intummadee?tab=repositories" target="_blank"><img alt="All Repositories" title="All Repositories" src="https://img.shields.io/badge/-All%20Repos-2962FF?style=for-the-badge&logo=koding&logoColor=white"/></a>
+</div>
+
