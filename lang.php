@@ -1,9 +1,11 @@
 
+
+
 <?php include "db.inc.php";?>
 <?php
 $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 $database = mysqli_select_db($connection, DB_DATABASE);
-$result = mysqli_query($connection, "SELECT * FROM BOOKS WHERE category = 'Academic'");
+$result = mysqli_query($connection, "SELECT * FROM BOOKS WHERE category = 'Language'");
 ?>
 
 <html lang="en">
