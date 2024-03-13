@@ -89,19 +89,27 @@ DESCRIBE USERS;
 // https://www.tandfonline.com/doi/cover-img/10.1080/uajb20.v018.i04
 
 UPDATE USERS SET email = 'Cat@gmail.com' WHERE user_id = 2;
-UPDATE BOOKS SET cover_image_path = 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/eefb4b139083251.622950955a99d.jpg' WHERE title = 'Nature';
+UPDATE BOOKS SET cover_image_path = 'https://m.media-amazon.com/images/I/51aIia81n8L.jpg' WHERE title = 'Listen For';
 
 
-DELETE FROM BOOKS WHERE title = 'BIOETHICS Journal';
+DELETE FROM BOOKS WHERE title = 'The CERULEAN';
 
 
 INSERT INTO BOOKS (title, category, price, author, cover_image_path, description) VALUES 
-('Nature', 'Academic', 350.00, 'Inter Nation', "https://media.discordapp.net/attachments/1210995096326250578/1211024140879003648/bebb0356b9f323d715425f603f00b058.png?ex=65ff261e&is=65ecb11e&hm=c850363f0e38e960a97f40f26e395d9a1c71d4aac88640e92207f0cb98d87c72&=&format=webp&quality=lossless&width=503&height=670" ,"one year the stories."),
-('BIOETHICS', 'Academic', 650.00, 'Beyound Consent', "https://media.discordapp.net/attachments/1210995096326250578/1211024141575135342/a36dc0bbf4e7ea661676ab9703b3ef09.png?ex=65ff261f&is=65ecb11f&hm=c248639ef4ed17674cc992e311ce94d7ba3484b8693b3b889be4e6fb4c2171b9&=&format=webp&quality=lossless&width=518&height=670","Buiding trusting relation");
+('VISUAL GUIDE TO BIOLOGY', 'Bio', 855.00, 'Inter Nation', "https://storage.naiin.com/system/application/bookstore/resource/product/202206/549964/1000249416_front_XXL.jpg?imgname=TBX-%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%8A%E0%B8%B5%E0%B8%A7%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2-VISUAL-GUIDE-TO-BIOLOGY-" ,"one year the stories."),
+('CONCEPTS IN BIOLOGY', 'Bio', 250.75, 'ธันวคม วิศวัส', "https://storage.naiin.com/system/application/bookstore/resource/product/202211/565432/1000256225_front_XXL.jpg?imgname=360-CONCEPTS-IN-BIOLOGY-PART-1-%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B8%E0%B8%87","Buiding trusting relation");
+
 
 INSERT INTO BOOKS (title, category, price, author, cover_image_path, description) VALUES 
-('BIOETHICS', 'Academic', 270.00, 'ElSlcon Pure', "https://www.tandfonline.com/doi/cover-img/10.1080/uajb20.v023.i07", "Made Number 7 on july 2023"),
-('WinterKeep', 'Romance', 120.00, 'Cel Gracele', "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1600268464l/53624358.jpg" , "New York Time");
+('The Mystery of Darkhill School', 'Mystery', 299.00, 'ElSlcon Pure', "https://m.media-amazon.com/images/I/41AiWNjwV-S.jpg", "Made Number 7 on july 2023"),
+('A House of Ghosts', 'Mystery', 359.00, 'ElSlcon Pure', "https://images.booksense.com/images/021/994/9781950994021.jpg", "Made Number 7 on july 2023"),
+('If She Fled', 'Mystery', 599.00, 'ElSlcon Pure', "https://cdn.kobo.com/book-images/f37fa6b7-26c8-4276-9542-2a0d62f62981/1200/1200/False/if-she-fled-a-kate-wise-mystery-book-5.jpg", "Made Number 7 on july 2023"),
+('Listen For', 'Mystery', 599.00, 'ElSlcon Pure', "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250880321_p0_v6%5D&call=url%5Bfile:common/decodeProduct.chain%5D", "Made Number 7 on july 2023"),
+('The Sittaford Mystery', 'Productive', 99.00, 'Cel Gracele', "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUNAO7vr9_qp0-jq2cqrpO6RHFovoVTt5CbfVJ-9loAE-oaP7axr4MDF8fRCyzf-o_954&usqp=CAU" , "New York Time");
+
+
+('The girl and the Witchs Garden', 'Fantasy', 220.00, 'Erin BowMan', "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570732371i/44779631.jpg", "The owner of the estate and Piper’s wealthy grandmother—is a witch. The grand house and its garden hold many secrets—some of which may even save her father—and Piper will need to believe in herself."),
+('The CERULEAN', 'Fantasy', 220.00, 'Amy Ewing', "https://devouringbooks2017.files.wordpress.com/2018/12/The-Cerulean-by-Amy-Ewing.jpg", "Sera has always felt as if she didn’t belong among her people, the Cerulean. She is curious about everything and can’t stop questioning her three mothers, her best friend, Leela, and even the High Priestess");
 
 
 

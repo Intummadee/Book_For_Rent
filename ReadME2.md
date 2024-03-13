@@ -22,8 +22,8 @@ ssh -i "Book_For_Rent2.pem" ubuntu@ec2-3-239-203-75.compute-1.amazonaws.com
 
 
 -ไม่รู้เพราะอะไร แต่ปัญหาน่าจะเป็น EC2 อาจจะเกิดจาก VPC เพราะลองใช้ vpc ที่เปน default แล้วผ่าน เลยสันนิษฐานว่าอาจเพราะ vpc ไว้งี้
-// เริ่ม Start
-ssh -i "cat.pem" ubuntu@ec2-18-206-149-66.compute-1.amazonaws.com
+// เริ่ม Start เอามาจากกด Connect กับ Ec2 โดยจะรัน ในที่ที่มีไฟล์  pem ที่เราโหลดมาตอนสร้าง ec2 เก็บไว้
+🍆🍆🍆 ssh -i "cat.pem" ubuntu@ec2-44-223-13-229.compute-1.amazonaws.com
 
 sudo -i
 sudo apt update
@@ -67,11 +67,18 @@ define('DB_DATABASE', 'php');
 
 🍸 ตัวอย่าง เช่น mysql -u admin -h <php endpoint> -p
 sudo mysql -u admin -h cat-db.c16ycg4m0nwv.us-east-1.rds.amazonaws.com -p
+lab-password
+
 
 ถ้าเชื่อมไม่ได้ให้ไป แก้ security group (ไปดูคลิป)
 โดยเพิ่ม inbound จาก Security groups ของ Ec2 เช่น sg-0c8ac80700869692f (cat-website)
 
 show databases;
+use php;
+show tables;
+
+- :q!
+
 
 +--------------------+
 | Database           |
@@ -84,14 +91,83 @@ show databases;
 4 rows in set (0.00 sec)
 
 
+show tables;
++---------------+
+| Tables_in_php |
++---------------+
+| BOOKS         |
+| EMPLOYEES     |
+| USERS         |
+| orders        |
++---------------+
+
+SELECT * FROM BOOKS;
+SELECT * FROM USERS;
+SELECT * FROM orders;
+
+DESCRIBE BOOKS;
+DESCRIBE orders;
+DESCRIBE USERS;
+
+DROP TABLE IF EXISTS BOOKS;
+
+
 แล้วสร้าง DB Php
 🍸 CREATE database php;
 
 สร้างเสร้จก็ออก exit;
 
 sudo vi SamplePage.php
-🍉🍉 vi SamplePage.php
+🍉🍉🍉🍉🍉   vi SamplePage.php
 vi fantasy.php
+sudo vi styles.css
+
+วิธีลบไฟล์
+sudo rm -r cart.php
+
+
+
+
+
+
+sudo mkdir catagories
+sudo vi academic.php
+sudo vi category/allbooks.php
+sudo vi category/bio.php
+sudo vi category/fantasy.php
+sudo vi category/history.php
+sudo vi category/horror.php
+sudo vi category/lang.php
+sudo vi category/mystery.php
+sudo vi category/productive.php
+sudo vi category/romance.php
+sudo vi category/travel.php
+
+
+sudo vi travel.php
+
+
+
+sudo vi profile.php
+sudo vi add_to_cart.php
+sudo vi cart.php
+sudo vi login_signup.php
+sudo vi academic.php
+sudo vi bio.php
+sudo vi fantasy.php
+sudo vi history.php
+sudo vi horror.php
+sudo vi lang.php
+sudo vi mystery.php
+sudo vi productive.php
+sudo vi travel.php
+sudo vi delete_book.php
+
+
+
+<?php 
+echo "Hello World";
+?>
 
 
 
@@ -107,18 +183,6 @@ http://44.223.13.229/SamplePage.php
 
 
 
-show tables;
-+---------------+
-| Tables_in_php |
-+---------------+
-| BOOKS         |
-| EMPLOYEES     |
-| USERS         |
-| orders        |
-+---------------+
-
-
-SELECT * FROM EMPLOYEES;
 
 
 

@@ -34,11 +34,11 @@ class="logo-img" style="width: 190px; height: 70px;">
 </h1>
 </div>
 <ul class="list-unstyled px-2">
-<li class=""><a href="../SamplePage.php" class="text-decoration-none px-3 py-2 d-block"> Home
+<li class=""><a href="SamplePage.php" class="text-decoration-none px-3 py-2 d-block"> Home
 </a></li>
-<li class=""><a href="../profile.php" class="text-decoration-none px-3 py-2 d-block">
+<li class=""><a href="profile.php" class="text-decoration-none px-3 py-2 d-block">
 Profile</a></li>
-<li class=""><a href="../cart.php" class="text-decoration-none px-3 py-2 d-block d-flex justify-content-between">
+<li class=""><a href="cart.php" class="text-decoration-none px-3 py-2 d-block d-flex justify-content-between">
 Your cart</span>
 </a>
 </li>
@@ -55,7 +55,7 @@ Romance</a></li>
 Horror</a></li>
 <li class=""><a href="history.php" class="text-decoration-none px-3 py-2 d-block">
 History</a></li>
-<li class=""><a href="mystery.php" class="text-decoration-none px-3 py-2 d-block">
+<li class="active"><a href="mystery.php" class="text-decoration-none px-3 py-2 d-block">
 Mystery</a></li>
 <li class=""><a href="bio.php" class="text-decoration-none px-3 py-2 d-block">
 Biography</a></li>
@@ -63,7 +63,7 @@ Biography</a></li>
 Travel</a></li>
 <li class=""><a href="productive.php" class="text-decoration-none px-3 py-2 d-block">
 Productivity</a></li>
-<li class="active"><a href="academic.php" class="text-decoration-none px-3 py-2 d-block">
+<li class=""><a href="academic.php" class="text-decoration-none px-3 py-2 d-block">
 Academic</a></li>
 <li class=""><a href="fantasy.php" class="text-decoration-none px-3 py-2 d-block">
 Fantasy</a></li>
