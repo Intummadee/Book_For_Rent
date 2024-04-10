@@ -263,6 +263,9 @@ DROP TABLE IF EXISTS _<tableName>_;
 
 &emsp; https://www.w3schools.com/php/
 
+&emsp; https://getbootstrap.com/docs/5.3/helpers/stacks/#horizontal
+
+
 
 <br>
 <div> 

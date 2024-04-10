@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse ms-m" id="navbarText">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/home">หน้าแรก</a>
+                        <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('about')}}">เกี่ยวกับ</a>
+                        <a class="nav-link" href="{{route('about')}}">About</a>
                     </li>
 
                 </ul>

@@ -48,4 +48,23 @@ Route::fallback(function(){
 });
 ```
 
+## Controller 
+- php artisan make:controller LessorController
 
+---
+
+## Database
+- สร้าง Model (เหมือน Class ใน OOP เป็นพิมพ์ใหญ่เสมอ) พร้อม Migration file ที่ทำหน้าที่เชื่อมต่อไปที่ตาราง
+```php
+php artisan make:model Books -m
+```
+
+- เอาโครงสร้างในไฟล์ Migration ไปสร้าง ฐานข้อมูล
+```php
+php artisan migrate
+```
+
+---
+
+## .env 
+- เป็นไฟล์ตั้งค่า Config Database

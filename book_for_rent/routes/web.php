@@ -13,32 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\LessorController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+// ใช้ Controller แล้วลบ Callback Function
+Route::get('/home' , [LessorController::class,'home'])->name('home');
+Route::get('/about' , [LessorController::class,'about'])->name('about');
+Route::get('/create' , [LessorController::class,'create']);
+Route::post('/insert' , [LessorController::class,'insert']);
 
-Route::get('/home', function () {
-    $books = [
-        [
-            'name'=>'Black Butler',
-            'content'=>'คนลึกไขปริศนาลับ',
-            'price'=>123,
-        ],
-        [
-            'name'=>'Madoka',
-            'content'=>'สาวน้อยเวทมนตร์',
-            'price'=>99,
-        ],
-    ];
-    return view('home', compact('books'));
-});
 
-Route::get('/about', function () {
-    $name = "Raiden Shogun";
-    $date = "10/4/2567";
-    return view('about', compact('name' , 'date'));
-})->name('about');
+
+
 
 
 
