@@ -49,7 +49,9 @@ Route::fallback(function(){
 ```
 
 ## Controller 
-- php artisan make:controller LessorController
+```php
+php artisan make:controller LessorController
+```
 
 ---
 
