@@ -68,5 +68,107 @@ php artisan migrate
 
 ---
 
+## Factory & Seeder
+
+- Factory เป็นการ Fake ข้อมูล จาก Model ด้วยรูปแบบที่เราจะสร้างใน Factory (นิยมชื่อ Model + คำว่า Factory)
+```php
+php artisan make:factory BooksFactory
+```
+
+- Seeder (เอา Factory มาใช้) ไปแก้ในไฟล์ Seeder ที่ถูกสร้าง จากนั้นไปเรียกใช้งานผ่านไฟล์ DatabaseSeeder.php
+```php
+php artisan make:seeder BooksSeeder
+```
+
+```php
+public function run(): void
+{
+    Books::factory()->count(10)->create(); // สร้าง 10 บทความแล้ว Create
+}
+```
+
+- หลังจากทำทุกอย่างเสร็จ ก็ใช้คำสั่ง
+```php
+php artisan db:seed
+```
+
+---
+
+## Query ข้อมูลจาก DB
+
+- import ลงใน Controller เพื่อเรียกใช้งาน DB
+```php
+use Illuminate\Support\Facades\DB;
+```
+
+- Get
+```php
+$books=DB::table('books')->get();
+```
+
+- Loop Get (Str::limit คือจำกัดตัวอักษร)
+```php
+@foreach ($books as $book)
+    <tr>
+        <td>{{$book->name}}</td>
+        <td>{{Str::limit($book->description, 30)}}</td>
+        <td class="text-success" >{{$book["price"]}}</td>
+    </tr>
+@endforeach
+```
+
+- Insert
+```php
+$data=[
+    'name' => $request->name,
+    'description' => $request->description,
+    'price' => $request->price
+];
+// dd($data);
+DB::table('books')->insert($data);
+return redirect('/home');
+```
+
+- Update
+
+```php
+Route::get('/edit/{id}' , [LessorController::class,'edit'])->name('edit');
+<a href="{{route('edit', $book->id)}}" class="btn btn-warning">Edit</a>
+function edit($id){
+    // dd(DB::table('books')->where('id',$id)->first()); // ดูข้อมูล
+    $book = DB::table('books')->where('id',$id)->first();
+    $data = [ // แก้เฉพาะ ราคา 
+        'price' => $book->price + 100
+    ];
+    DB::table('books')->where('id', $id)->update($data);
+    return redirect('/home');
+}
+```
+
+- Delete
+```php
+DB::table('books')->where('id',$id)->delete();
+```
+
+---
+
+## Router
+
+- ใส่ Parameter
+```php
+Route::get('/delete/{id}' , [LessorController::class,'delete'])->name('delete');
+<a href="{{route('delete', $book->id)}}" class="btn btn-danger">Delete</a>
+```
+
+---
+
+## Authentication
+```php
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install
+npm run build
+```
+
 ## .env 
 - เป็นไฟล์ตั้งค่า Config Database

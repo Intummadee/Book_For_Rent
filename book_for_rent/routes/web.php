@@ -20,11 +20,18 @@ Route::get('/', function () {
 });
 
 // ใช้ Controller แล้วลบ Callback Function
-Route::get('/home' , [LessorController::class,'home'])->name('home');
+// Route::get('/home' , [LessorController::class,'home'])->name('home');
 Route::get('/about' , [LessorController::class,'about'])->name('about');
 Route::get('/create' , [LessorController::class,'create']);
 Route::post('/insert' , [LessorController::class,'insert']);
+Route::get('/delete/{id}' , [LessorController::class,'delete'])->name('delete');
+Route::get('/edit/{id}' , [LessorController::class,'edit'])->name('edit');
+Route::post('/update/{id}' , [LessorController::class,'update'])->name('update');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
@@ -51,3 +58,5 @@ Route::get('admin/users/fallback', function () {
 Route::fallback(function(){
     return "<h1>ไม่พบหน้าเว็บ</h1>";
 });
+
+
