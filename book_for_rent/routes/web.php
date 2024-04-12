@@ -14,11 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\LessorController;
+use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+// ! สำหรับ Uer
+Route::get('/' , [UserController::class,'index']);
+Route::get('/detailBook/{id}' , [UserController::class,'detailBook']);
+
+
+
+// ! สำหรับ Lessor
 // ใช้ Controller แล้วลบ Callback Function
 // Route::get('/home' , [LessorController::class,'home'])->name('home');
 Route::get('/about' , [LessorController::class,'about'])->name('about');

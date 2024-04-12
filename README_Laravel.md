@@ -94,16 +94,23 @@ php artisan db:seed
 
 ---
 
-## Query ข้อมูลจาก DB
+## Query ข้อมูลจาก DB 
+-Laravelมีวิธีใช้งาน ฐานข้อมูล 2 วิธี 2.Eloquent มันจะเขียนสั้นกว่ากับการใช้ 1.Builder
 
-- import ลงใน Controller เพื่อเรียกใช้งาน DB
+- import ลงใน Controller เพื่อเรียกใช้งาน DB แบบ Builder
 ```php
 use Illuminate\Support\Facades\DB;
+```
+
+- 2. Eloquent
+```php
+use App\Models\Books;
 ```
 
 - Get
 ```php
 $books=DB::table('books')->get();
+$books=Books::paginate(4);
 ```
 
 - Loop Get (Str::limit คือจำกัดตัวอักษร)
@@ -126,6 +133,7 @@ $data=[
 ];
 // dd($data);
 DB::table('books')->insert($data);
+Books::insert($data);
 return redirect('/home');
 ```
 
@@ -135,7 +143,6 @@ return redirect('/home');
 Route::get('/edit/{id}' , [LessorController::class,'edit'])->name('edit');
 <a href="{{route('edit', $book->id)}}" class="btn btn-warning">Edit</a>
 function edit($id){
-    // dd(DB::table('books')->where('id',$id)->first()); // ดูข้อมูล
     $book = DB::table('books')->where('id',$id)->first();
     $data = [ // แก้เฉพาะ ราคา 
         'price' => $book->price + 100
@@ -145,9 +152,22 @@ function edit($id){
 }
 ```
 
+```php
+function edit($id){
+    $book = Books::find($id);
+    $data = [ // แก้เฉพาะ ราคา 
+        'price' => $book->price + 100
+    ];
+    Books::find($id)->update($data);
+    return redirect('/home');
+}
+```
+
 - Delete
 ```php
 DB::table('books')->where('id',$id)->delete();
+Books::find($id)->delete();
+return redirect()->back();
 ```
 
 ---

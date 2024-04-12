@@ -265,7 +265,7 @@ DROP TABLE IF EXISTS _<tableName>_;
 
 &emsp; https://getbootstrap.com/docs/5.3/helpers/stacks/#horizontal
 
-
+&emsp; https://ckeditor.com/docs/ckeditor5/latest/installation/index.html
 
 <br>
 <div> 

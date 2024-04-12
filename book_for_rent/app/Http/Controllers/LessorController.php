@@ -4,11 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Books;
 
 class LessorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     function home(){
-        $books=DB::table('books')->paginate(4); // paginate = เป็นการสรา้งระบบหมายเลขหน้า โดยต้องระบุ จำนวนรายการ
+        $books=Books::paginate(4);
+        // $books=DB::table('books')->paginate(4); // paginate = เป็นการสรา้งระบบหมายเลขหน้า โดยต้องระบุ จำนวนรายการ
         return view('home', compact('books'));
     }
 
@@ -20,7 +27,7 @@ class LessorController extends Controller
 
     function delete($id){
         DB::table('books')->where('id',$id)->delete();
-        return redirect('/home');
+        return redirect()->back();
     }
 
     function create(){
