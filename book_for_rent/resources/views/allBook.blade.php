@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.layout')
+{{-- @extends('layouts.app') --}}
 
 @section('title', 'Book_For_Rent')
 
