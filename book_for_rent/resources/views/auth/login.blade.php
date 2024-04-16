@@ -31,10 +31,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
         :root {
-            --top: -180px; /* ตำแหน่งของหนังสือ */
+            --top: -180px;
+            /* ตำแหน่งของหนังสือ */
             --height_book: 300px;
-            --width_book:210px;
-            --width_flip:32px;
+            --width_book: 210px;
+            --width_flip: 32px;
 
         }
 
@@ -127,7 +128,8 @@
             position: absolute;
             top: var(--top);
             right: 50%;
-            transform-origin: 100% 100%; /* มันคือจุดหมุน 100 100 คือ จุดหมุนอยู่ขวาล่างสุด หรือก็คือตรงสันหนังสือขีดตรงกลางที่ด้านล่าง https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin */
+            transform-origin: 100% 100%;
+            /* มันคือจุดหมุน 100 100 คือ จุดหมุนอยู่ขวาล่างสุด หรือก็คือตรงสันหนังสือขีดตรงกลางที่ด้านล่าง https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin */
             border: solid #555 2px;
             background-size: 420px 300px;
             background-position: center;
@@ -210,6 +212,7 @@
         .page:nth-child(5) {
             transform: rotateX(60deg) rotateY(175.5deg);
         }
+
         .page:nth-child(6) {
             transform: rotateX(60deg) rotateY(174deg);
             overflow: hidden;
@@ -1347,8 +1350,8 @@
             :root {
                 --top: -10px;
                 --height_book: 60px;
-                --width_book:100px;
-                --width_flip:13.5px;
+                --width_book: 100px;
+                --width_flip: 13.5px;
 
             }
 
@@ -1388,34 +1391,31 @@
                     <div class="book">
                         <div class="gap"></div>
                         <div class="pages">
-                          <div class="page"></div>
-                          <div class="page"></div>
-                          <div class="page"></div>
-                          <div class="page"></div>
-                          <div class="page"></div>
-                          <div class="page"></div>
+                            <div class="page"></div>
+                            <div class="page"></div>
+                            <div class="page"></div>
+                            <div class="page"></div>
+                            <div class="page"></div>
+                            <div class="page"></div>
                         </div>
 
                         {{-- flip คืออิหน้าที่กำลังพลิกอยู่ ถูกสร้างมาเปน animation การพลิก ถ้าไม่มี flip จะเปนแค่หน้าหนังสือสองหน้าเฉยๆ😵‍💫 --}}
                         <div class="flips">
-                          <div class="flip flip1">
-                            <div class="flip flip2">
-                              <div class="flip flip3">
-                                <div class="flip flip4">
-                                  <div class="flip flip5">
-                                    <div class="flip flip6">
-                                      <div class="flip flip7"></div>
+                            <div class="flip flip1">
+                                <div class="flip flip2">
+                                    <div class="flip flip3">
+                                        <div class="flip flip4">
+                                            <div class="flip flip5">
+                                                <div class="flip flip6">
+                                                    <div class="flip flip7"></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
                             </div>
-                          </div>
                         </div>
-
-
-
-                      </div>
+                    </div>
                 </div>
 
 
@@ -1437,44 +1437,83 @@
 
 
 
-        <!-------------------- ------ Right Box ---------------------------->
+            <!-------------------- ------ Right Box ---------------------------->
 
-        <div class="col-md-6 right-box">
-            <div class="row align-items-center">
-                <div class="header-text mb-4">
-                    <h2>Welcome</h2>
-                    <p>Have fun choosing your book.</p>
-                </div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg bg-light fs-6"
-                        placeholder="Email address">
-                </div>
-                <div class="input-group mb-1">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
-                </div>
-                <div class="input-group mb-5 d-flex justify-content-between">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="formCheck">
-                        <label for="formCheck" class="form-check-label text-secondary"><small>Remember
-                                Me</small></label>
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                    <div class="header-text mb-4">
+                        <h2>Welcome</h2>
+                        <p>Have fun choosing your book.</p>
                     </div>
-                    <div class="forgot">
-                        <small><a href="#">Forgot Password?</a></small>
-                    </div>
-                </div>
-                <div class="input-group mb-3">
-                    <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
-                </div>
-                <div class="input-group mb-3">
-                    {{-- <button class="btn btn-lg btn-light w-100 fs-6"><img src="images/google.png" style="width:20px"
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <div class="input-group mb-3">
+                            {{-- <input type="text" class="form-control form-control-lg bg-light fs-6"
+                                placeholder="Email address"> --}}
+                                <input id="email" type="email"
+                                        class="form-control form-control-lg bg-light fs-6
+                                        @error('email') is-invalid
+                                        @enderror"
+                                        name="email"
+                                        placeholder="Email address"
+                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                    @error(' email') <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+
+
+                        </div>
+                        <div class="input-group mb-1">
+                            {{-- <input type="password" class="form-control form-control-lg bg-light fs-6"
+                                placeholder="Password"> --}}
+
+                            <input id="password" type="password" class="form-control form-control-lg bg-light fs-6
+                            @error('password') is-invalid @enderror"
+                                name="password" required autocomplete="current-password" placeholder="Password">
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+
+
+
+                        </div>
+                        <div class="input-group mb-5 d-flex justify-content-between">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="remember" id="remember"
+                                    {{ old('remember') ? 'checked' : '' }}>
+                                <label for="remember" class="form-check-label text-secondary">
+                                    <small>{{ __('Remember Me') }}</small>
+                                </label>
+                            </div>
+                            <div class="forgot">
+                                @if (Route::has('password.request'))
+                                    <small><a
+                                            href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a></small>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-primary w-100 fs-6" type="submit"
+                                style="font-family: "Inter", sans-serif;">
+                                {{ __('Login') }}
+                            </button>
+                        </div>
+                        <div class="input-group mb-3">
+                            {{-- <button class="btn btn-lg btn-light w-100 fs-6"><img src="images/google.png" style="width:20px"
                             class="me-2"><small>Sign In with Google</small></button> --}}
-                </div>
-                <div class="row">
-                    <small>Don't have account? <a href="#">Sign Up</a></small>
+                        </div>
+                        <div class="row">
+                            <small>Don't have account?  <a href="{{ route('register') }}">Sign Up</a></small>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     </div>
 </body>
