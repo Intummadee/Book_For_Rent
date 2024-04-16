@@ -30,6 +30,15 @@
         /* Font for Books Left */
         @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+        :root {
+            --top: -180px; /* ตำแหน่งของหนังสือ */
+            --height_book: 300px;
+            --width_book:210px;
+            --width_flip:32px;
+
+        }
+
+
         * {
             margin: 0;
             padding: 0;
@@ -43,6 +52,11 @@
             animation: preLoad 1s steps(1);
             width: 1px;
             height: 1px;
+        }
+
+        .pages,
+        .flips {
+            transform-style: preserve-3d;
         }
 
         @-webkit-keyframes preLoad {
@@ -102,28 +116,32 @@
             position: relative;
             perspective: 630px;
             perspective-origin: center 50px;
-            transform: scale(1.2);
+            /* transform: scale(var(--scale_book)); */
             filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.25));
         }
 
         .page {
-            width: 210px;
-            height: 300px;
+            width: var(--width_book);
+            height: var(--height_book);
             background-color: #bbb;
             position: absolute;
-            top: 0px;
+            top: var(--top);
             right: 50%;
-            transform-origin: 100% 100%;
+            transform-origin: 100% 100%; /* มันคือจุดหมุน 100 100 คือ จุดหมุนอยู่ขวาล่างสุด หรือก็คือตรงสันหนังสือขีดตรงกลางที่ด้านล่าง https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin */
             border: solid #555 2px;
             background-size: 420px 300px;
             background-position: center;
             transform-style: preserve-3d;
+            /* background-color: lawngreen; */
         }
 
+        /* rotateX ที่เป็นบวกคือหมุนไปด้านหลัง
+        แกน x กับ y ของ rotate ให้นึกถึงกราฟ เช่น ให้สมมติเราจับแกน yเหมือนจับเสาที่ตั้งฉากกับพื้นเหมือนในกราฟ แล้วถ้า rotateY คือเหมือนรูด หมุนไปกับเสาอะ   */
         .page:nth-child(1) {
             transform: rotateX(60deg) rotateY(3deg);
         }
 
+        /* rotateY + คือหมุนไปทางขวา */
         .page:nth-child(2) {
             transform: rotateX(60deg) rotateY(4.5deg);
         }
@@ -132,37 +150,12 @@
             transform: rotateX(60deg) rotateY(6deg);
             -webkit-animation: nextPage 25s infinite -24s steps(1);
             animation: nextPage 25s infinite -24s steps(1);
+            /* animation-name, animation-duration, animation-iteration-count, animation-delay, animation-timing-function: steps(1) */
             background-size: 420px 300px;
             background-position: -2px -2px;
+            /* background-color: red; */
         }
 
-        .page:nth-child(4) {
-            transform: rotateX(60deg) rotateY(177deg);
-        }
-
-        .page:nth-child(5) {
-            transform: rotateX(60deg) rotateY(175.5deg);
-        }
-
-        .page:nth-child(6) {
-            transform: rotateX(60deg) rotateY(174deg);
-            overflow: hidden;
-        }
-
-        .page:nth-child(6)::after {
-            content: "";
-            width: 210px;
-            height: 300px;
-            position: absolute;
-            top: 0px;
-            right: 0%;
-            transform-origin: center;
-            transform: rotateY(180deg);
-            -webkit-animation: nextPage 25s -20s infinite steps(1);
-            animation: nextPage 25s -20s infinite steps(1);
-            background-size: 420px 300px;
-            background-position: 100% -2px;
-        }
 
         @-webkit-keyframes nextPage {
             0% {
@@ -208,6 +201,41 @@
             }
         }
 
+
+        /* เป็นกระดาษฝั่งขวาของ Book */
+        .page:nth-child(4) {
+            transform: rotateX(60deg) rotateY(177deg);
+        }
+
+        .page:nth-child(5) {
+            transform: rotateX(60deg) rotateY(175.5deg);
+        }
+        .page:nth-child(6) {
+            transform: rotateX(60deg) rotateY(174deg);
+            overflow: hidden;
+            /* overflow คือเหมือนกับ text-wrap ถ้าเนื้อหาเกินกล่องที่มันอยู่ จะให้ซ่อนเนื้อหาไว้ มันไม่ได้เพิ่มเนื้อที่ให้ตัวอักษรเหมือน wrap ที่จะขยายกล่องให้ แต่อันนี้คือเราจะทำไรกับเนื้อหาที่เกินมาเลยไม่ได้ ถ้าเป้น overflow:scroll คือจะใส่ scroll ให้เลื่อนดูเนื้อหาได้ --> https://www.youtube.com/watch?v=d7cH8geV2dY  */
+        }
+
+
+        /* https://www.youtube.com/watch?v=_LxYNxeWpBo */
+        .page:nth-child(6)::after {
+            content: "";
+            width: 210px;
+            height: 300px;
+            position: absolute;
+            top: 0px;
+            right: 0%;
+            transform-origin: center;
+            transform: rotateY(180deg);
+            -webkit-animation: nextPage 25s -20s infinite steps(1);
+            animation: nextPage 25s -20s infinite steps(1);
+            background-size: 420px 300px;
+            background-position: 100% -2px;
+            /* background-color: red; */
+        }
+
+
+
         .gap {
             width: 10px;
             height: 300px;
@@ -215,7 +243,7 @@
             transform: rotateX(60deg);
             transform-origin: bottom;
             position: absolute;
-            top: 0px;
+            top: var(--top);
             left: calc(50% - 5px);
         }
 
@@ -231,16 +259,14 @@
             border-radius: 50%;
         }
 
-        .pages,
-        .flips {
-            transform-style: preserve-3d;
-        }
 
+
+        /* ถ้าอยากเข้าใจ flip ลบ 2 comment ออก เข้าใจเลย */
         .flip {
-            width: 32px;
-            height: 300px;
+            width: var(--width_flip);
+            height: var(--height_book);
             position: absolute;
-            top: 0px;
+            top: var(--top);
             transform-origin: 100% 100%;
             right: 100%;
             border: solid #555;
@@ -249,9 +275,12 @@
             perspective-origin: center;
             transform-style: preserve-3d;
             background-size: 420px 300px;
+            /* comment 1 */
+            /* background-color: #103cbe */
         }
 
         .flip::after {
+            /* comment 2 ใส่ข้อความไรก็ได้ลงใน content */
             content: "";
             position: absolute;
             top: 0px;
@@ -1265,35 +1294,19 @@
 
 
         body {
-            /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk0ay4mR7OywI9urP8mD1nUBMIgTI90iryOf5SpvlvA4sgnhMMFVesqouc6l97r1C58uo&usqp=CAU');
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk0ay4mR7OywI9urP8mD1nUBMIgTI90iryOf5SpvlvA4sgnhMMFVesqouc6l97r1C58uo&usqp=CAU');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; */
+            min-height: 100vh;
             font-family: 'Poppins', sans-serif;
-            background: #ececec;
+            /* background: #ececec; */
         }
 
-        #box {
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, .2);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-            border-radius: 10px;
-            /* padding: 30px 40px; */
-        }
 
-        #title {
-            display: flex;
-            justify-content: center;
-            font-size: 2rem;
-            font-family: "Inter", sans-serif;
-            font-weight: bold;
-            font-optical-sizing: auto;
-        }
 
         #text-inter {
             color: black;
@@ -1303,7 +1316,7 @@
 
         /*------------ Login container ------------*/
         .box-area {
-            width: 930px;
+            width: 1100px;
         }
 
         /*------------ Right box ------------*/
@@ -1331,6 +1344,14 @@
                 margin: 0 10px;
             }
 
+            :root {
+                --top: -10px;
+                --height_book: 60px;
+                --width_book:100px;
+                --width_flip:13.5px;
+
+            }
+
             .left-box {
                 height: 100px;
                 overflow: hidden;
@@ -1352,71 +1373,77 @@
         {{-- d-flex ถ้าตั้งไว้ที่ container ที่เป็นตัวแม่ ตัวลูกหรือพวก div ข้างใน container ก็จะได้รับ d-flex ไปด้วย ประหนึ่งตั้งไว้ที่แม่ เพื่อทำให้กล่องมัน flex ปล. defualt ของ flex direction คือ row --}}
         <!----------------------- Login Container -------------------------->
         <div class="row border rounded-5 p-3 bg-white shadow box-area">
+
+
             <!--------------------------- Left Box ----------------------------->
-
-
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
-                style="background: #103cbe;">
+                style="">
 
 
                 {{-- <div class="featured-image mb-3">
                     <img src="images/1.png" class="img-fluid" style="width: 250px;">
                 </div> --}}
+                <div class="featured-image mb-3">
 
-                <div class="book">
-                    <div class="gap"></div>
-                    {{-- <div class="pages">
-                      <div class="page"></div>
-                      <div class="page"></div>
-                      <div class="page"></div>
-                      <div class="page"></div>
-                      <div class="page"></div>
-                      <div class="page"></div>
-                    </div> --}}
+                    <div class="book">
+                        <div class="gap"></div>
+                        <div class="pages">
+                          <div class="page"></div>
+                          <div class="page"></div>
+                          <div class="page"></div>
+                          <div class="page"></div>
+                          <div class="page"></div>
+                          <div class="page"></div>
+                        </div>
 
-
-                    {{-- <div class="flips">
-                      <div class="flip flip1">
-                        <div class="flip flip2">
-                          <div class="flip flip3">
-                            <div class="flip flip4">
-                              <div class="flip flip5">
-                                <div class="flip flip6">
-                                  <div class="flip flip7"></div>
+                        {{-- flip คืออิหน้าที่กำลังพลิกอยู่ ถูกสร้างมาเปน animation การพลิก ถ้าไม่มี flip จะเปนแค่หน้าหนังสือสองหน้าเฉยๆ😵‍💫 --}}
+                        <div class="flips">
+                          <div class="flip flip1">
+                            <div class="flip flip2">
+                              <div class="flip flip3">
+                                <div class="flip flip4">
+                                  <div class="flip flip5">
+                                    <div class="flip flip6">
+                                      <div class="flip flip7"></div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
+
+
+
                       </div>
-                    </div> --}}
+                </div>
 
 
 
-                  </div>
 
 
 
+
+                {{-- <p class="text-black fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Be
+                    Verified
+                </p> --}}
+                {{-- text-wrap มันเหมือนการห่อ ถ้าเกินว่า ตัวอักษรมันเกินขนาดกล่องที่มันอยู่ ถ้าไม่ตั้ง text-wrap ไว้ มันจะเกินขนาดออกไป แต่ถ้า wrap มันจะปัดตกมาเปนบรรทัดที่สอง เพื่อให้ตัวอักษรมันไม่หลุดออกนอกกล่องที่ text มันอยู่ --}}
+                {{-- <small class="text-white text-wrap text-center"
+                    style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join experienced Designers on
+                    this platform.
+                </small> --}}
             </div>
 
 
 
 
-
-            <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Be
-                Verified</p>
-            {{-- text-wrap มันเหมือนการห่อ ถ้าเกินว่า ตัวอักษรมันเกินขนาดกล่องที่มันอยู่ ถ้าไม่ตั้ง text-wrap ไว้ มันจะเกินขนาดออกไป แต่ถ้า wrap มันจะปัดตกมาเปนบรรทัดที่สอง เพื่อให้ตัวอักษรมันไม่หลุดออกนอกกล่องที่ text มันอยู่ --}}
-            <small class="text-white text-wrap text-center"
-                style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join experienced Designers on
-                this platform.</small>
-        </div>
         <!-------------------- ------ Right Box ---------------------------->
 
         <div class="col-md-6 right-box">
             <div class="row align-items-center">
                 <div class="header-text mb-4">
-                    <h2>Hello,Again</h2>
-                    <p>We are happy to have you back.</p>
+                    <h2>Welcome</h2>
+                    <p>Have fun choosing your book.</p>
                 </div>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control form-control-lg bg-light fs-6"
@@ -1439,14 +1466,15 @@
                     <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
                 </div>
                 <div class="input-group mb-3">
-                    <button class="btn btn-lg btn-light w-100 fs-6"><img src="images/google.png" style="width:20px"
-                            class="me-2"><small>Sign In with Google</small></button>
+                    {{-- <button class="btn btn-lg btn-light w-100 fs-6"><img src="images/google.png" style="width:20px"
+                            class="me-2"><small>Sign In with Google</small></button> --}}
                 </div>
                 <div class="row">
                     <small>Don't have account? <a href="#">Sign Up</a></small>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
 </body>
