@@ -30,12 +30,16 @@
         /* Font for Books Left */
         @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
+
         :root {
             --top: -180px;
             /* ตำแหน่งของหนังสือ */
             --height_book: 300px;
             --width_book: 210px;
             --width_flip: 32px;
+            --green:#2DB66E;
+            --background:#171E31;
 
         }
 
@@ -1297,7 +1301,8 @@
 
 
         body {
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk0ay4mR7OywI9urP8mD1nUBMIgTI90iryOf5SpvlvA4sgnhMMFVesqouc6l97r1C58uo&usqp=CAU');
+            /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk0ay4mR7OywI9urP8mD1nUBMIgTI90iryOf5SpvlvA4sgnhMMFVesqouc6l97r1C58uo&usqp=CAU'); */
+            background-color: var(--background);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -1309,12 +1314,39 @@
             /* background: #ececec; */
         }
 
+        #box {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            border-radius: 10px;
+            /* padding: 30px 40px; */
+        }
+
 
 
         #text-inter {
             color: black;
             font-family: "Inter", sans-serif;
         }
+
+        #input{
+            font-family: 'Open Sans', sans-serif; letter-spacing: 2px;
+            font-size: 20px;
+            font-weight:bold;
+            display: block;
+            color: white;
+            border: 0;
+            background-color: var(--background);
+        }
+
+        #input:hover{
+            background-color: var(--green);
+            color: whitesmoke;
+            transition: background-color 2s ease-out;
+        }
+
+
 
 
         /*------------ Login container ------------*/
@@ -1338,6 +1370,36 @@
 
         .rounded-5 {
             border-radius: 30px;
+        }
+
+
+        #email {
+            border-radius: 18px;
+            padding: 10px 15px;
+        }
+
+        #password {
+            border-radius: 18px;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+        }
+
+
+        /*------------ Select Input ------------*/
+        input[type=text]:focus{
+            box-shadow: #7be2abf8 0px 0px 6px 1px;
+        }
+
+        input[type=email]:focus{
+            /* outline: none; */
+            /* border: none; */
+            /* box-shadow: 1 1 1 3px orange; */
+            box-shadow: #7be2abf8 0px 0px 6px 1px;
+            /* box-shadow: #7be2abf8 0px 0px 8px; */
+        }
+
+        input[type=password]:focus{
+            box-shadow: #7be2abf8 0px 0px 6px 1px;
         }
 
         /*------------ For small screens------------*/
@@ -1372,10 +1434,10 @@
     <div class="imgLoader"></div>
 
     <!----------------------- Main Container -------------------------->
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100" >
         {{-- d-flex ถ้าตั้งไว้ที่ container ที่เป็นตัวแม่ ตัวลูกหรือพวก div ข้างใน container ก็จะได้รับ d-flex ไปด้วย ประหนึ่งตั้งไว้ที่แม่ เพื่อทำให้กล่องมัน flex ปล. defualt ของ flex direction คือ row --}}
         <!----------------------- Login Container -------------------------->
-        <div class="row border rounded-5 p-3 bg-white shadow box-area">
+        <div class="row border rounded-5 p-3 bg-white shadow box-area" id="box">
 
 
             <!--------------------------- Left Box ----------------------------->
@@ -1442,8 +1504,8 @@
             <div class="col-md-6 right-box">
                 <div class="row align-items-center">
                     <div class="header-text mb-4">
-                        <h2>Welcome</h2>
-                        <p>Have fun choosing your book.</p>
+                        <h2 style="font-size:3rem;font-family: 'Open Sans', sans-serif; text-transform: uppercase; font-weight:bold">Welcome</h2>
+                        <p >Have fun choosing your book.</p>
                     </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -1498,10 +1560,8 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <button class="btn btn-lg btn-primary w-100 fs-6" type="submit"
-                                style="font-family: "Inter", sans-serif;">
-                                {{ __('Login') }}
-                            </button>
+                            <input class="btn btn-lg btn-primary w-100 fs-6" type="submit" id="input" value="Login">
+
                         </div>
                         <div class="input-group mb-3">
                             {{-- <button class="btn btn-lg btn-light w-100 fs-6"><img src="images/google.png" style="width:20px"

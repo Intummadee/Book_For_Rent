@@ -41,6 +41,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('about')}}">About</a>
                     </li>
+                    <li class="nav-item d-flex justify-content-center align-items-center">
+                        <a  target="_blank" href="https://www.figma.com/file/YNgHl22lq0Ox5hIhp0oSKg/Book_For_Rent?type=design&node-id=0%3A1&mode=design&t=qwix9YKjAz0pxInb-1">
+                            <img  border="0"  alt="Figma" src="https://s3-alpha.figma.com/hub/file/1481185752/fa4cd070-6a79-4e1b-b079-8b9b76408595-cover.png" width="20" height="25">
+
+                        </a>
+                    </li>
 
 
                     <!-- Right Side Of Navbar -->
@@ -58,6 +64,8 @@
                                     <a class="nav-link" href="{{ route('register') }}">Register</a>
                                 </li>
                             @endif
+
+
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
