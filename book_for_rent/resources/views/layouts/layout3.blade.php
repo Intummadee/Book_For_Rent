@@ -113,6 +113,12 @@
             color: white;
         }
 
+        #threeline{
+            color: var(--green);
+            background: white;
+        }
+        
+
         div.content {
             margin-left: 200px;
             padding: 1px 16px;
@@ -165,7 +171,7 @@
 
 
             {{-- Button ตรงนี้คือ ถ้าย่อขนาดหน้าจอ มันจะทำปุ่ม dropdown ให้ อย่าลบ! --}}
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="threeline" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -175,7 +181,7 @@
 
                     {{-- รูป Cart --}}
                     <li class="nav-item ">
-                        <a class="nav-link d-flex justify-content-center align-items-center"
+                        <a class="nav-link d-lg-flex justify-content-center align-items-center"
                             href="{{ route('about') }}">
                             <img style="padding-bottom: 1px; padding-right:3px" width="33px" height="30px"
                                 src="/images/cart.png">
@@ -188,7 +194,7 @@
 
 
                     {{-- รูป Figma --}}
-                    <li class="nav-item d-flex justify-content-center align-items-center mx-4">
+                    <li class="nav-item d-lg-flex justify-content-center align-items-center mx-4">
                         <a target="_blank"
                             href="https://www.figma.com/file/YNgHl22lq0Ox5hIhp0oSKg/Book_For_Rent?type=design&node-id=0%3A1&mode=design&t=qwix9YKjAz0pxInb-1">
                             <img border="0" alt="Figma"
@@ -198,9 +204,9 @@
                     </li>
 
 
-                    {{-- ชื่อ User --}}
 
-                    <li class="nav-item dropdown text-white" >
+                    {{-- test --}}
+                    {{-- <li class="nav-item dropdown text-white d-lg-flex justify-content-center align-items-center flex-column" >
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Dropdown link
                         </a>
@@ -209,11 +215,11 @@
                           <li><a class="dropdown-item" href="#">Another action</a></li>
                           <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
 
 
-                    <li class="nav-item d-flex justify-content-center align-items-center">
-                        <!-- Authentication Links -->
+                    {{-- User Authen --}}
+                    <li class="nav-item d-lg-flex justify-content-center align-items-center flex-column">
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -227,8 +233,11 @@
                                             class="title">Register</span></a>
                                 </li>
                             @endif
+
+
+                            {{-- Logout --}}
                         @else
-                            <li class="nav-item dropdown  d-flex justify-content-center align-items-center">
+                            <li class="nav-item dropdown d-lg-flex justify-content-center align-items-center flex-column">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <span class="title">{{ Auth::user()->name }}</span>
