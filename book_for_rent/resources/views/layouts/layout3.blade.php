@@ -92,7 +92,7 @@
             width: 200px;
             height: 100%;
             top: -10px;
-            z-index: 100000;
+            z-index: 10000;
             overflow: auto;
         }
 
@@ -152,7 +152,7 @@
 
 
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" >
         {{-- <!-- Container wrapper --> --}}
         <div class="container-fluid" style="background: #12192C">
             <div class="d-flex justify-content-center align-items-center">
@@ -199,6 +199,19 @@
 
 
                     {{-- ชื่อ User --}}
+
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown link
+                        </a>
+                        <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                          <li class="d-flex justify-content-center align-items-center"><a class="dropdown-item " href="#">Action</a></li>
+                          <li  class="d-flex justify-content-center align-items-center"><a class="dropdown-item" href="#">Another action</a></li>
+                          <li class="d-flex justify-content-center align-items-center"><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+
                     <li class="nav-item d-flex justify-content-center align-items-center">
                         <!-- Authentication Links -->
                         @guest
@@ -243,12 +256,12 @@
 
     </nav>
 
-    {{-- <div class="sidebar">
+    <div class="sidebar">
         <a class="active" href="#">Home</a>
         <a href="#">News</a>
         <a href="#">Contact</a>
         <a href="#">About</a>
-    </div> --}}
+    </div>
 
 
 
