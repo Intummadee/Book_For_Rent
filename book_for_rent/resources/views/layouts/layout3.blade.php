@@ -54,7 +54,7 @@
             color: white;
         }
 
-        .container-fluid{
+        .container-fluid {
             /* top: -100px */
             transform: translateY(-10px);
             padding-top: 10px;
@@ -73,38 +73,115 @@
             text-decoration: var(--green) wavy underline;
         }
 
-        #navbarDropdown{
+        #navbarDropdown {
             color: white;
             /* border: 2px solid #32a1ce; */
-
         }
 
+        #notiCart {
+            position: relative;
+            top: -10px;
+            right: -4px;
+        }
+
+        .sidebar {
+            margin-top: 78px;
+            padding: 0;
+            background-color: var(--green);
+            position: fixed;
+            width: 200px;
+            height: 100%;
+            top: -10px;
+            z-index: 100000;
+            overflow: auto;
+        }
+
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        .sidebar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+
+
+        @media screen and (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar a {
+                float: left;
+            }
+
+            div.content {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+
+
+        }
     </style>
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        {{-- <!-- Container wrapper --> --}}
         <div class="container-fluid" style="background: #12192C">
-            <div>
-                <img src="/images/logo.png"
-                    width="40px" height="35px" alt="">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="/images/logo.png" width="40px" height="35px" alt="">
                 {{-- https://cdn3.iconfinder.com/data/icons/flat-office-icons-1/140/Artboard_1-1024.png --}}
+                <a class="navbar-brand " href="/"><span class="head">Book Nook</span></a>
             </div>
-            <a class="navbar-brand" href="/"><span class="head">Book Nook</span></a>
 
 
 
 
-            <div class="collapse navbar-collapse ms-m" id="navbarText">
+            {{-- Button ตรงนี้คือ ถ้าย่อขนาดหน้าจอ มันจะทำปุ่ม dropdown ให้ อย่าลบ! --}}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse ms-m" id="navbarText" >
                 <ul class="navbar-nav ms-auto">
 
                     {{-- รูป Cart --}}
                     <li class="nav-item ">
-                        <a class="nav-link d-flex justify-content-center align-items-center" href="{{ route('about') }}"><img style="padding-bottom: 1px; padding-right:3px"  width="33px" height="30px" src="/images/cart.png" ><span class="title" style="scroll-padding-left: 2px">Cart</span></a>
-                        <a data-mdb-dropdown-init class="text-reset me-3 dropdown-toggle hidden-arrow" href="{{ route('about') }}" id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                            <i class="fas fa-bell"></i><span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        <a class="nav-link d-flex justify-content-center align-items-center"
+                            href="{{ route('about') }}">
+                            <img style="padding-bottom: 1px; padding-right:3px" width="33px" height="30px"
+                                src="/images/cart.png">
+                            <span class="title" style="scroll-padding-left: 2px">Cart</span>
+
+                            <span class="badge rounded-pill badge-notification bg-danger" id="notiCart">1</span>
                         </a>
                     </li>
 
@@ -121,8 +198,8 @@
                     </li>
 
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    {{-- ชื่อ User --}}
+                    <li class="nav-item d-flex justify-content-center align-items-center">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -138,7 +215,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown  d-flex justify-content-center align-items-center">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <span class="title">{{ Auth::user()->name }}</span>
@@ -159,16 +236,29 @@
                         @endguest
                     </ul>
 
-                </ul>
+                </li>
             </div>
         </div>
+
+
     </nav>
+
+    {{-- <div class="sidebar">
+        <a class="active" href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+    </div> --}}
 
 
 
     <div class="container py-2">
         @yield('content')
     </div>
+
+
+
+
 </body>
 
 </html>
