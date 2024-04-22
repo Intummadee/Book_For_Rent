@@ -29,13 +29,13 @@
             --background: #171E31;
             --red: #904363;
             --darkblue: #12192C;
+            --header18: 18px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
             /* font-family: "Inter", sans-serif; */
         }
 
@@ -43,8 +43,8 @@
             /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk0ay4mR7OywI9urP8mD1nUBMIgTI90iryOf5SpvlvA4sgnhMMFVesqouc6l97r1C58uo&usqp=CAU'); */
             min-height: 10vh;
             font-family: 'Poppins', sans-serif;
-            /* background: #ececec; */
-            background: black;
+            background: var(--background);
+            color: white;
         }
 
 
@@ -74,7 +74,6 @@
         .title {
             font-size: 18px;
             color: white;
-
         }
 
         /* <!--------------------------- Text Hover ----------------------------> */
@@ -104,21 +103,22 @@
 
         /* <!--------------------------- SideBar ----------------------------> */
         .sidebar {
-            margin-top: 78px;
+            /* margin-top: 78px; */
             padding: 0;
-            background-color: var(--green);
+            background-color: var(--darkblue);
             position: fixed;
             width: 200px;
             height: 100%;
-            top: -10px;
+            /* top: -4px; */
             z-index: 10000;
             overflow: auto;
         }
 
         .sidebar a {
             display: block;
-            color: black;
+            color: white;
             padding: 16px;
+            font-size: var(--header18);
             text-decoration: none;
         }
 
@@ -130,15 +130,21 @@
         .sidebar a:hover:not(.active) {
             background-color: #555;
             color: white;
+            background-image: linear-gradient(to right, grey, var(--background));
         }
 
 
 
         /* <!--------------------------- Content ----------------------------> */
-        div.content {
-            /* margin-left: 200px;
-            padding: 1px 16px;
-            height: 1000px; */
+        .content {
+            margin-left: 200px;
+            padding-left: 3rem;
+            /* height: 1000px; */
+            background: var(--background)
+        }
+
+        .containerOfContent{
+            transform: translateY(-15px);
         }
 
 
@@ -288,8 +294,17 @@
 
 
     {{-- <!--------------------------- Content ----------------------------> --}}
-    <div class="container  py-2">
-        @yield('content')
+    {{-- <div class="container py-2"> --}}
+    <div class="containerOfContent">
+        <div class="sidebar">
+            <a class="active" href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+        <div  class="content">
+            @yield('content')
+        </div>
     </div>
 
 
