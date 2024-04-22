@@ -10,8 +10,9 @@ use App\Models\Books;
 class UserController extends Controller
 {
     function index(){
-        $books = Books::orderByDesc('id')->where('price', '<=', 200)->get();
-        return view('allBook', compact('books'));
+        // $books = Books::orderByDesc('id')->where('price', '<=', 200)->get();
+        // return view('allBook', compact('books'));
+        return view('home');
     }
 
     function detailBook($id){
