@@ -44,21 +44,30 @@
             min-height: 10vh;
             font-family: 'Poppins', sans-serif;
             /* background: #ececec; */
+            background: black;
         }
 
+
+        /* <!--------------------------- Nav ----------------------------> */
+        .container-fluid {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        #navMom {
+            /* top: -100px; */
+            transform: translateY(-10px);
+        }
+
+
+
+        /* <!--------------------------- Text ----------------------------> */
         /* ข้อความ Book Nook */
         .head {
             margin-left: 10px;
             font-size: 25px;
             font-weight: bold;
             color: white;
-        }
-
-        .container-fluid {
-            /* top: -100px */
-            transform: translateY(-10px);
-            padding-top: 10px;
-            padding-bottom: 10px;
         }
 
         /* text ด้านขวา ของ head */
@@ -68,14 +77,22 @@
 
         }
 
-
+        /* <!--------------------------- Text Hover ----------------------------> */
         .nav-item:hover {
             text-decoration: var(--green) wavy underline;
         }
 
+
+
+        /* <!--------------------------- Menu , Nav-item ----------------------------> */
         #navbarDropdown {
             color: white;
             /* border: 2px solid #32a1ce; */
+        }
+
+        #threeline {
+            color: var(--green);
+            background: white;
         }
 
         #notiCart {
@@ -84,6 +101,8 @@
             right: -4px;
         }
 
+
+        /* <!--------------------------- SideBar ----------------------------> */
         .sidebar {
             margin-top: 78px;
             padding: 0;
@@ -113,19 +132,18 @@
             color: white;
         }
 
-        #threeline{
-            color: var(--green);
-            background: white;
-        }
-        
 
+
+        /* <!--------------------------- Content ----------------------------> */
         div.content {
-            margin-left: 200px;
+            /* margin-left: 200px;
             padding: 1px 16px;
-            height: 1000px;
+            height: 1000px; */
         }
 
 
+
+        /* <!--------------------------- Responsive ----------------------------> */
         @media screen and (max-width: 700px) {
             .sidebar {
                 width: 100%;
@@ -158,9 +176,9 @@
 
 
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" >
-        {{-- <!-- Container wrapper --> --}}
-        <div class="container-fluid" style="background: #12192C">
+    <nav class="navbar navbar-expand-lg" id="navMom">
+        {{-- <!--------------------------- Container Wrapper ----------------------------> --}}
+        <div class="container-fluid" style="background: #12192C; ">
             <div class="d-flex justify-content-center align-items-center">
                 <img src="/images/logo.png" width="40px" height="35px" alt="">
                 {{-- https://cdn3.iconfinder.com/data/icons/flat-office-icons-1/140/Artboard_1-1024.png --}}
@@ -171,15 +189,17 @@
 
 
             {{-- Button ตรงนี้คือ ถ้าย่อขนาดหน้าจอ มันจะทำปุ่ม dropdown ให้ อย่าลบ! --}}
-            <button id="threeline" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="threeline" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
 
-            <div class="collapse navbar-collapse ms-m" id="navbarText" >
+            <div class="collapse navbar-collapse ms-m" id="navbarText">
                 <ul class="navbar-nav ms-auto">
 
-                    {{-- รูป Cart --}}
+                    {{-- <!--------------------------- Cart ----------------------------> --}}
                     <li class="nav-item ">
                         <a class="nav-link d-lg-flex justify-content-center align-items-center"
                             href="{{ route('about') }}">
@@ -193,7 +213,7 @@
 
 
 
-                    {{-- รูป Figma --}}
+                    {{-- <!--------------------------- Figma ----------------------------> --}}
                     <li class="nav-item d-lg-flex justify-content-center align-items-center mx-4">
                         <a target="_blank"
                             href="https://www.figma.com/file/YNgHl22lq0Ox5hIhp0oSKg/Book_For_Rent?type=design&node-id=0%3A1&mode=design&t=qwix9YKjAz0pxInb-1">
@@ -218,45 +238,44 @@
                     </li> --}}
 
 
-                    {{-- User Authen --}}
+                    {{-- <!--------------------------- User Authen ----------------------------> --}}
                     <li class="nav-item d-lg-flex justify-content-center align-items-center flex-column">
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}"><span class="title">Login</span></a>
-                                </li>
-                            @endif
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}"><span class="title">Login</span></a>
+                        </li>
+                        @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"><span
-                                            class="title">Register</span></a>
-                                </li>
-                            @endif
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}"><span class="title">Register</span></a>
+                            </li>
+                        @endif
 
 
-                            {{-- Logout --}}
-                        @else
-                            <li class="nav-item dropdown d-lg-flex justify-content-center align-items-center flex-column">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <span class="title">{{ Auth::user()->name }}</span>
+                        {{-- <!--------------------------- Log out ----------------------------> --}}
+                    @else
+                        <li class="nav-item dropdown d-lg-flex justify-content-center align-items-center flex-column">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span class="title">{{ Auth::user()->name }}</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
 
                 </li>
             </div>
@@ -265,22 +284,18 @@
 
     </nav>
 
-    {{-- <div class="sidebar">
-        <a class="active" href="#">Home</a>
-        <a href="#">News</a>
-        <a href="#">Contact</a>
-        <a href="#">About</a>
-    </div> --}}
 
 
 
-    <div class="container py-2">
+    {{-- <!--------------------------- Content ----------------------------> --}}
+    <div class="container  py-2">
         @yield('content')
     </div>
 
 
 
 
-</body>
 
+
+</body>
 </html>
