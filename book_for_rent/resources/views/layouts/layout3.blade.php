@@ -43,7 +43,7 @@
         body {
             /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk0ay4mR7OywI9urP8mD1nUBMIgTI90iryOf5SpvlvA4sgnhMMFVesqouc6l97r1C58uo&usqp=CAU'); */
             min-height: 10vh;
-            font-family: 'Poppins', sans-serif;
+            /* font-family: 'Poppins', sans-serif; */
             background: var(--background);
             color: white;
         }
@@ -126,7 +126,7 @@
             text-align: center;
         }
 
-        .sidebar > div{
+        .sidebar>div {
             display: block;
             color: var(--red);
             padding: 16px;
@@ -146,7 +146,7 @@
         }
 
         .sidebar a:hover {
-        /* .sidebar a:hover:not(.active) { */
+            /* .sidebar a:hover:not(.active) { */
             color: var(--green);
             background-image: linear-gradient(to right, rgba(51, 53, 127, 0.696), var(--background), var(--darkblue));
             border-left: 7px solid var(--green);
@@ -156,13 +156,13 @@
 
 
         /* <!--------------------------- Content ----------------------------> */
-        .contents{
+        .contents {
             background: var(--background);
             margin-left: 200px;
         }
 
         /* .contents > .content { */
-            /* height: 1000px; */
+        /* height: 1000px; */
         /* } */
 
         .containerOfContent {
@@ -222,6 +222,18 @@
             div.content {
                 margin-left: 0;
             }
+
+            .contents {
+                background: var(--background);
+                margin-left: 0px;
+            }
+
+            #imgSlide {
+                min-height: 58vh;
+                max-height: 58vh;
+            }
+
+
         }
 
         @media screen and (max-width: 400px) {
@@ -230,6 +242,10 @@
                 float: none;
             }
 
+            #imgSlide {
+                min-height: 38vh;
+                max-height: 38vh;
+            }
 
         }
     </style>
@@ -364,29 +380,31 @@
             <a href="#about">History</a>
             <a href="#about">Kids</a>
         </div>
-        <div  class="contents" style="overflow: auto;">
+        <div class="contents" style="overflow: auto;">
 
             <div class="carousel" id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                      <img id="imgSlide" src="/images/slide3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img id="imgSlide" src="/images/slide3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img id="imgSlide" src="/images/slide2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img id="imgSlide" src="/images/Banner.png" class="d-block w-100" alt="...">
+                    </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img id="imgSlide" src="/images/slide2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img id="imgSlide" src="/images/Banner.png" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
-              </div>
+            </div>
 
 
             <div class="content">
