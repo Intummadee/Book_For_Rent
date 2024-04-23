@@ -79,7 +79,8 @@
 
         /* <!--------------------------- Text Hover ----------------------------> */
         .nav-item:hover {
-            text-decoration: var(--green) wavy underline;
+            /* text-decoration: var(--green) wavy underline; */
+            font-weight: bold;
         }
 
 
@@ -131,7 +132,7 @@
         .sidebar a:hover:not(.active) {
             background-color: #555;
             color: white;
-            background-image: linear-gradient(to right, grey, var(--background));
+            background-image: linear-gradient(to right, rgba(51, 53, 127, 0.696), var(--background), var(--darkblue));
         }
 
 
@@ -151,10 +152,6 @@
 
 
         /* <!--------------------------- Carousel ----------------------------> */
-        #carouselExampleIndicators {
-            /* padding: 0px 10px; */
-        }
-
 
         #imgSlide {
             min-height: 88vh;
@@ -171,8 +168,6 @@
             /* border: 1px solid black; */
             background-image: none;
         }
-
-
 
         .carousel-control-next-icon:after {
             content: '>';
@@ -346,37 +341,27 @@
 
 
 
-            <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img id="imgSlide" src="/images/Banner.png" class="d-block w-100 " alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img id="imgSlide" src="/images/slide2.jpg" class="d-block w-100 " alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img id="imgSlide" src="images/slide3.jpg" class="d-block w-100 " alt="...">
-                    </div>
+                  <div class="carousel-item active" data-bs-interval="10000">
+                      <img id="imgSlide" src="/images/slide3.jpg" class="d-block w-100" alt="...">
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span style="color:black" class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img id="imgSlide" src="/images/slide2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img id="imgSlide" src="/images/Banner.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
                 </button>
-            </div>
+              </div>
 
             <div>
 
