@@ -28,7 +28,7 @@
             --green: #2DB66E;
             --background: #2e3f61;
             /* --background: #171E31; */
-            --red: #904363;
+            --red: #EA6DA1;
             --darkblue: #12192C;
             --header18: 18px;
         }
@@ -114,6 +114,7 @@
             /* top: -4px; */
             z-index: 10000;
             overflow: auto;
+
         }
 
         .sidebar a {
@@ -122,36 +123,58 @@
             padding: 16px;
             font-size: var(--header18);
             text-decoration: none;
+            text-align: center;
+        }
+
+        .sidebar > div{
+            display: block;
+            color: var(--red);
+            padding: 16px;
+            font-size: 22px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .sidebar a.active {
-            background-color: #04AA6D;
+            /* background-color: var(--green);
             color: white;
+            background-color: #04AA6D;
+             color: white;
+            background-image: linear-gradient(to right, rgba(51, 53, 127, 0.696), var(--background), var(--darkblue));
+            border-left: 7px solid var(--green);
+             font-weight: bold; */
         }
 
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
+        .sidebar a:hover {
+        /* .sidebar a:hover:not(.active) { */
+            color: var(--green);
             background-image: linear-gradient(to right, rgba(51, 53, 127, 0.696), var(--background), var(--darkblue));
+            border-left: 7px solid var(--green);
+            font-weight: bold;
         }
 
 
 
         /* <!--------------------------- Content ----------------------------> */
-        .content {
+        .contents{
+            background: var(--background);
             margin-left: 200px;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            /* height: 1000px; */
-            background: var(--background)
         }
 
+        /* .contents > .content { */
+            /* height: 1000px; */
+        /* } */
+
         .containerOfContent {
-            transform: translateY(-15px);
+            transform: translateY(-20px);
         }
 
 
         /* <!--------------------------- Carousel ----------------------------> */
+
+        /* .contents .carousel{
+            margin-left: 200px;
+        } */
 
         #imgSlide {
             min-height: 88vh;
@@ -333,15 +356,17 @@
     <div class="containerOfContent">
         <div class="sidebar">
             <a class="active" href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <a href="#news">Profile</a>
+            <a href="#contact">My Books</a>
+            <a href="#about">Favorite</a>
+            <div href="#about">Category</div>
+            <a href="#about">Romance</a>
+            <a href="#about">History</a>
+            <a href="#about">Kids</a>
         </div>
-        <div class="content " style="overflow: auto">
+        <div  class="contents" style="overflow: auto;">
 
-
-
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel" id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
                       <img id="imgSlide" src="/images/slide3.jpg" class="d-block w-100" alt="...">
@@ -363,8 +388,8 @@
                 </button>
               </div>
 
-            <div>
 
+            <div class="content">
                 @yield('content')
             </div>
 
