@@ -26,7 +26,8 @@
     <style>
         :root {
             --green: #2DB66E;
-            --background: #171E31;
+            --background: #2e3f61;
+            /* --background: #171E31; */
             --red: #904363;
             --darkblue: #12192C;
             --header18: 18px;
@@ -138,14 +139,53 @@
         /* <!--------------------------- Content ----------------------------> */
         .content {
             margin-left: 200px;
-            padding-left: 3rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
             /* height: 1000px; */
             background: var(--background)
         }
 
-        .containerOfContent{
+        .containerOfContent {
             transform: translateY(-15px);
         }
+
+
+        /* <!--------------------------- Carousel ----------------------------> */
+        #carouselExampleIndicators {
+            /* padding: 0px 10px; */
+        }
+
+
+        #imgSlide {
+            min-height: 88vh;
+            max-height: 88vh;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            height: 90px;
+            width: 40px;
+            /* outline: black; */
+            /* background-size: 60%, 60%; */
+            /* border-radius: 50%; */
+            /* border: 1px solid black; */
+            background-image: none;
+        }
+
+
+
+        .carousel-control-next-icon:after {
+            content: '>';
+            font-size: 55px;
+            color: black;
+        }
+
+        .carousel-control-prev-icon:after {
+            content: '<';
+            font-size: 55px;
+            color: black;
+        }
+
 
 
 
@@ -302,9 +342,52 @@
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
         </div>
-        <div  class="content">
-            @yield('content')
+        <div class="content " style="overflow: auto">
+
+
+
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img id="imgSlide" src="/images/Banner.png" class="d-block w-100 " alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img id="imgSlide" src="/images/slide2.jpg" class="d-block w-100 " alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img id="imgSlide" src="images/slide3.jpg" class="d-block w-100 " alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span style="color:black" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div>
+
+                @yield('content')
+            </div>
+
+
         </div>
+
+
+
     </div>
 
 
@@ -313,4 +396,5 @@
 
 
 </body>
+
 </html>
