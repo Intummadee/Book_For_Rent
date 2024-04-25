@@ -58,6 +58,7 @@
         #navMom {
             /* top: -100px; */
             transform: translateY(-10px);
+            z-index: 10000;
         }
 
 
