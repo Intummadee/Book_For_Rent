@@ -149,8 +149,9 @@
 
         #saleCost{
             color: grey;
-            font-size: 18px;
+            font-size: 20px;
             text-decoration: line-through;
+            font-weight:normal;
         }
 
 
@@ -244,6 +245,32 @@
                     </div>
                   </div>
 
+                  <div class="col">
+                    <div id="book">
+                        <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
+                        <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                        <h3>100.00 บาท</h3>
+                    </div>
+                  </div>
+
+
+                  <div class="col">
+                    <div id="book">
+                        <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
+                        <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                        <h3>100.00 บาท</h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div id="book">
+                        <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
+                        <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                        <h3>100.00 บาท</h3>
+                    </div>
+                  </div>
+
+
                 </div>
 
                 {{-- แถวที่ 2 --}}
@@ -261,7 +288,7 @@
 
 
 
-            {{-- <table class="table table-bordered">
+            <table class="table table-bordered">
                 <tbody>
                     <tr>
                         <td>
@@ -301,7 +328,8 @@
                     </tr>
 
                 </tbody>
-            </table> --}}
+            </table>
+            
 
         </div>
 
