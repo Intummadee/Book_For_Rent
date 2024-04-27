@@ -38,7 +38,7 @@
             /* margin: 0 0 20px; */
             position: relative;
             font-family: "Inter", sans-serif;
-            font-size: 24px;
+            font-size: 40px;
             line-height: 1.2;
             color: var(--green);
             text-align: justify;
@@ -116,9 +116,15 @@
 
         /* <!--------------------------- Books ----------------------------> */
         #book{
-            background-color: rgb(73, 68, 68);
+            /* background-color: rgb(73, 68, 68); */
             display: block;
-            /* padding: 0 25px; */
+            padding: 0 15px;
+            max-width: 300px;
+            min-width: 300px;
+        }
+
+        #book:hover{
+            /* border: 1px solid white; */
         }
 
 
@@ -127,9 +133,26 @@
             height: 400px;
         }
 
-        #book > h4 {
-
+        #book > h3 {
+            color: var(--green);
+            font-weight: bold;
         }
+
+        #book > h4 {
+            margin-top: 10px;
+        }
+
+        #shelfBooks {
+            margin-bottom: 30px;
+        }
+
+
+        #saleCost{
+            color: grey;
+            font-size: 18px;
+            text-decoration: line-through;
+        }
+
 
 
 
@@ -145,8 +168,11 @@
                 margin-bottom: 50rem;
                 /* ใส่ไว้ก่อน ค่อยลบ */
             }
-
         }
+
+
+
+
     </style>
 </head>
 
@@ -185,33 +211,52 @@
         <div style="margin-top: 5rem">
 
             <div class="container">
-                <div class="row" >
+                <div class="row" id="shelfBooks">
                   <div class="col">
                     <div id="book">
                         <img src="https://i.pinimg.com/564x/e0/9b/34/e09b34cfd970f848c4bff707e1d60923.jpg"  alt="" srcset="">
                         <h4 >บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
-                        <h5>52.00 Baht</h5>
+                        <h3>52.00 บาท  <span id="saleCost">174</span></h3>
                     </div>
                   </div>
+
                   <div class="col">
                     <div id="book">
                         <img src="https://i.pinimg.com/564x/cb/8a/62/cb8a62ea006966a0310029d548afa945.jpg"  alt="" srcset="">
                         <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
-                        <h5>100.00 Baht</h5>
+                        <h3>100.00 บาท</h3>
                     </div>
                   </div>
+
                   <div class="col">
                     <div id="book">
-                        <img src="https://i.pinimg.com/564x/cb/8a/62/cb8a62ea006966a0310029d548afa945.jpg"  alt="" srcset="">
-                        <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
-                        <h5>100.00 Baht</h5>
+                        <img src="https://cdn-local.mebmarket.com/meb/server1/106046/Thumbnail/book_detail_large.gif?4"  alt="" srcset="">
+                        <h4>นิยายเรื่องนี้ข้าไม่ได้เขียน</h4>
+                        <h3>100.00 บาท</h3>
                     </div>
                   </div>
 
-
-
+                  <div class="col">
+                    <div id="book">
+                        <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
+                        <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                        <h3>100.00 บาท</h3>
+                    </div>
+                  </div>
 
                 </div>
+
+                {{-- แถวที่ 2 --}}
+
+
+
+
+
+
+
+
+
+
               </div>
 
 
@@ -219,34 +264,46 @@
             {{-- <table class="table table-bordered">
                 <tbody>
                     <tr>
-
-                        <td><img src="https://i.pinimg.com/564x/81/ff/7e/81ff7e755978b0d1483672163d96169b.jpg" alt="imageBook" ></td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>
+                            <div id="book">
+                                <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
+                                <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                                <h5>100.00 บาท</h5>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>
+                            <div id="book">
+                                <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
+                                <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                                <h5>100.00 บาท</h5>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>
+                            <div id="book">
+                                <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
+                                <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                                <h5>100.00 บาท</h5>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>
+                            <div id="book">
+                                <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
+                                <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                                <h5>100.00 บาท</h5>
+                            </div>
+                        </td>
                     </tr>
 
                 </tbody>
             </table> --}}
-        </div>
 
+        </div>
 
 
 
