@@ -1333,17 +1333,21 @@
         #input{
             font-family: 'Open Sans', sans-serif; letter-spacing: 2px;
             font-size: 20px;
-            font-weight:bold;
+            /* font-weight:bold; */
             display: block;
-            color: white;
-            border: 0;
-            background-color: var(--background);
+            color:white;
+            /* border: 2px solid; */
+            /* border-color: black; */
+            /* background: none; */
+            background-color: var(--background) ;
         }
 
         #input:hover{
-            background-color: var(--green);
+            /* background-color: var(--green);
             color: whitesmoke;
-            transition: background-color 2s ease-out;
+            transition: background-color 2s ease-out; */
+            font-weight: bold;
+            /* color: var(--green) */
         }
 
 

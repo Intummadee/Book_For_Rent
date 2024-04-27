@@ -86,7 +86,7 @@
 
 
 
-        #input{
+        #input {
             font-family: 'Open Sans', sans-serif; letter-spacing: 2px;
             font-size: 16px;
             font-weight:bold;
@@ -95,7 +95,17 @@
             border: 0;
         }
 
+        #inputRegister{
+            font-family: 'Open Sans', sans-serif; letter-spacing: 2px;
+            font-size: 16px;
+            display: block;
+            color: white;
+            border: 0;
+        }
 
+        #inputRegister:hover{
+            font-weight: bold;
+        }
 
         /*------------ Custom Placeholder ------------*/
         ::placeholder {
@@ -205,7 +215,7 @@
                                 {{-- <button type="submit" class="btn col-md-12 text-light bg-dark" id="input">
                                     {{ __('Register') }}
                                 </button> --}}
-                                <input class="btn col-md-12 text-light bg-dark" type="submit" id="input" value="Register">
+                                <input class="btn col-md-12 text-light bg-dark" type="submit" id="inputRegister" value="Register">
                             </div>
                         </div>
                     </form>

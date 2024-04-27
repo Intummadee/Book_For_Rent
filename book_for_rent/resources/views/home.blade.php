@@ -77,8 +77,10 @@
         .book-grid ul img {
             display: block;
             box-shadow: 0px -5px 20px 2px rgba(0, 0, 0, 0.3);
-            width: 200px;
-            height: 300px;
+            /* width: 200px;
+            height: 300px; */
+            width: 270px;
+            height: 400px;
             -o-object-fit: cover;
             object-fit: cover;
         }
@@ -106,10 +108,30 @@
             z-index: 3;
         }
 
-        li > img:hover{
+        li > img:hover {
             opacity: 0.60;
             cursor: pointer;
         }
+
+
+        /* <!--------------------------- Books ----------------------------> */
+        #book{
+            background-color: rgb(73, 68, 68);
+            display: block;
+            /* padding: 0 25px; */
+        }
+
+
+        #book > img {
+            width: 270px;
+            height: 400px;
+        }
+
+        #book > h4 {
+
+        }
+
+
 
 
 
@@ -149,9 +171,11 @@
         <div class="bookshelf">
             <div class="book-grid">
                 <ul>
-                    <li> <img src="https://images-na.ssl-images-amazon.com/images/I/51uLvJlKpNL._SX321_BO1,204,203,200_.jpg" /></li>
-                    <li> <img src="https://i.harperapps.com/covers/9780062698162/x510.jpg" /></li>
-                    <li> <img src="https://i.pinimg.com/564x/f7/c8/12/f7c812c9b0296cd9f119e33a06d9a256.jpg" /></li>
+                    <li> <img
+                            src="https://images-na.ssl-images-amazon.com/images/I/51uLvJlKpNL._SX321_BO1,204,203,200_.jpg" />
+                    </li>
+                    <li> <img src="https://i.pinimg.com/564x/63/e6/e3/63e6e36d8786e886dbc5b52ce1146fdb.jpg" /></li>
+                    <li> <img src="https://i.pinimg.com/564x/cb/8a/62/cb8a62ea006966a0310029d548afa945.jpg" /></li>
                 </ul>
             </div>
             <div class="shelf-shadows"></div>
@@ -159,7 +183,68 @@
         </div>
 
         <div style="margin-top: 5rem">
-            <h1>Hello1</h1>
+
+            <div class="container">
+                <div class="row" >
+                  <div class="col">
+                    <div id="book">
+                        <img src="https://i.pinimg.com/564x/e0/9b/34/e09b34cfd970f848c4bff707e1d60923.jpg"  alt="" srcset="">
+                        <h4 >บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                        <h5>52.00 Baht</h5>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div id="book">
+                        <img src="https://i.pinimg.com/564x/cb/8a/62/cb8a62ea006966a0310029d548afa945.jpg"  alt="" srcset="">
+                        <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                        <h5>100.00 Baht</h5>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div id="book">
+                        <img src="https://i.pinimg.com/564x/cb/8a/62/cb8a62ea006966a0310029d548afa945.jpg"  alt="" srcset="">
+                        <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
+                        <h5>100.00 Baht</h5>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+
+
+
+            {{-- <table class="table table-bordered">
+                <tbody>
+                    <tr>
+
+                        <td><img src="https://i.pinimg.com/564x/81/ff/7e/81ff7e755978b0d1483672163d96169b.jpg" alt="imageBook" ></td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+
+                </tbody>
+            </table> --}}
         </div>
 
 
