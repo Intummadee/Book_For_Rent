@@ -34,6 +34,10 @@ Route::get('/edit/{id}' , [LessorController::class,'edit'])->name('edit');
 Route::post('/update/{id}' , [LessorController::class,'update'])->name('update');
 
 
+
+
+
+// ต้อง Log in ถึงจะเข้าได้
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

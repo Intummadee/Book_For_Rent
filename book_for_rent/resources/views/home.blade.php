@@ -10,6 +10,7 @@
             --background: #2e3f61;
             --red: #EA6DA1;
             --darkblue: #12192C;
+            --pink: #11112c;
             --header18: 18px;
             /* font-family: 'Open Sans', sans-serif; */
             /* font-family: "Inter", sans-serif; */
@@ -160,6 +161,15 @@
             margin-bottom: 30px;
         }
 
+        #seeAll{
+            color: var(--red);
+            font-size: 18px;
+        }
+        #seeAll:hover{
+            font-weight: bold;
+            color: #fd3e8e;
+        }
+
 
 
         /* #trybook{
@@ -202,7 +212,7 @@
     <div id="head">
         <div class="favoriteBook">
             <blockquote>
-                หนังสือที่คนชอบมากที่สุด,
+                หนังสือที่คนชอบมากที่สุด
             </blockquote>
         </div>
 
@@ -231,11 +241,14 @@
         <div style="margin-top: 5rem">
 
             <div class="container">
-                <div class="row" id="shelfBooks">
 
-                    <div>
+                {{-- แถวที่ 1  --}}
+                <div class="row" id="shelfBooks">
+                    <div style="display: flex; justify-content:space-between; align-items:center;">
                         <h1>หนังสือขายดี</h1>
+                        <a id="seeAll" href="#" >ดูทั้งหมด <span style="font-weight: bold; ">></span></a>
                     </div>
+                    <hr>
 
                     <div class="col">
                         <div id="book">
@@ -275,13 +288,13 @@
                             <h3>100.00 บาท</h3>
                         </div>
                     </div>
+                    {{$books->links()}}
 
 
                 </div>
 
                 {{-- แถวที่ 2 --}}
                 <div class="row" id="shelfBooks">
-
                     <div>
                         <h1>หนังสือขายดีมาใหม่</h1>
                     </div>
@@ -325,6 +338,7 @@
 
 
 
+
             </div>
 
 
@@ -332,53 +346,7 @@
 
 
 
-            {{-- <div class="container">
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <td style="background: red" id="trybook">
-                                <div >
-                                    <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
-                                    <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
-                                    <h5>100.00 บาท</h5>
-                                </div>
-                            </td>
-                            <td id="trybook">
-                                <div >
-                                    <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
-                                    <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
-                                    <h5>100.00 บาท</h5>
-                                </div>
-                            </td>
-                            <td id="trybook">
-                                <div >
-                                    <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
-                                    <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
-                                    <h5>100.00 บาท</h5>
-                                </div>
-                            </td>
-                            <td id="trybook">
-                                <div >
-                                    <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
-                                    <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
-                                    <h5>100.00 บาท</h5>
-                                </div>
-                            </td>
-                        </tr>
 
-                        <tr>
-                            <td id="trybook">
-                                <div >
-                                    <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"  alt="" srcset="">
-                                    <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท นิยายจีนแปล</h4>
-                                    <h5>100.00 บาท</h5>
-                                </div>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div> --}}
 
 
 
