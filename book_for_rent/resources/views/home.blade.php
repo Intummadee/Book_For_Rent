@@ -10,9 +10,8 @@
             --background: #2e3f61;
             --red: #EA6DA1;
             --darkblue: #12192C;
-            --pink: #11112c;
             --header18: 18px;
-            /* font-family: 'Open Sans', sans-serif; */
+            font-family: 'Open Sans', sans-serif;
             /* font-family: "Inter", sans-serif; */
         }
 
