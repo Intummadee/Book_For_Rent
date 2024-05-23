@@ -294,39 +294,156 @@
 
                 {{-- แถวที่ 2 --}}
                 <div class="row" id="shelfBooks">
-                    <div>
+                    <div style="display: flex; justify-content:space-between; align-items:center;">
                         <h1>หนังสือขายดีมาใหม่</h1>
+                        <a id="seeAll" href="#" >ดูทั้งหมด <span style="font-weight: bold; ">></span></a>
                     </div>
-                    <div class="col">
-                        <div id="book">
-                            <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"
-                                alt="" srcset="">
-                            <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท
-                                นิยายจีนแปล</h4>
-                            <h3>100.00 บาท</h3>
+                    <hr>
+                    <div class="carousel slide" id="myCarousel">
+                        <div class="carousel-inner">
+                          <div class="item active">
+                            <ul class="thumbnails">
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                            </ul>
+                          </div><!-- /Slide1 -->
+                          <div class="item">
+                            <ul class="thumbnails">
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                            </ul>
+                          </div><!-- /Slide2 -->
+                          <div class="item">
+                            <ul class="thumbnails">
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                              <li class="span3">
+                                <div class="thumbnail">
+                                  <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                </div>
+                                <div class="caption">
+                                  <h4>Praesent commodo</h4>
+                                  <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                  <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                </div>
+                              </li>
+                            </ul>
+                          </div><!-- /Slide3 -->
                         </div>
-                    </div>
+
+                        <div class="control-box">
+                          <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+                          <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                        </div><!-- /.control-box -->
+
+                      </div><!-- /#myCarousel -->
 
 
-                    <div class="col">
-                        <div id="book">
-                            <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"
-                                alt="" srcset="">
-                            <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท
-                                นิยายจีนแปล</h4>
-                            <h3>100.00 บาท</h3>
-                        </div>
-                    </div>
 
-                    <div class="col">
-                        <div id="book">
-                            <img src="https://i.pinimg.com/564x/3f/5a/1a/3f5a1ad943abb60fb045e06fa0207fe8.jpg"
-                                alt="" srcset="">
-                            <h4>บัณฑิตชาวนา ขอท่านใต้เท้าโปรดให้อภัย 1 ผู้เขียน: หลีซานเยี่ย หนังสือให้เช่า ประเภท
-                                นิยายจีนแปล</h4>
-                            <h3>100.00 บาท</h3>
-                        </div>
-                    </div>
                 </div>
 
 
