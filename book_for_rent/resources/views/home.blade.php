@@ -11,7 +11,7 @@
             --red: #EA6DA1;
             --darkblue: #12192C;
             --header18: 18px;
-            /* font-family: 'Open Sans', sans-serif; */
+            font-family: 'Open Sans', sans-serif;
             /* font-family: "Inter", sans-serif; */
         }
 
